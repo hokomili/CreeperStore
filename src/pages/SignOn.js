@@ -1,20 +1,19 @@
-
 import { Layout } from 'antd';
-import AppHeader from "../components/Header"
-import AppFooter from "../components/Footer"
-import CartDetail from "../components/CartDetail";
+import AppHeader from "../components/Header";
+import AppFooter from "../components/Footer";
+import Signup from"../components/Signup";
 
 const { Header, Content, Footer } = Layout;
 
-function ShoppingCart() {
-   return (
+function SignOn() {
+    return (
       <Layout className="container main-layout">
          <Layout className="bg-gray">     
             <Header className="layout-header">
                <AppHeader title="Shopping Cart" />
             </Header>
             <Content className="layout-content">
-               <CartDetail />
+                <Signup />
             </Content>
             <Footer className="layout-footer">
                <AppFooter />
@@ -24,4 +23,4 @@ function ShoppingCart() {
    );
 }
 
-export default ShoppingCart;
+export default SignOn;

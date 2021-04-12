@@ -1,5 +1,4 @@
 import { Layout } from 'antd';
-import NavBar from "../components/NavBar";
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 import Sign from"../components/Sign";

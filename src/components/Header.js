@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { StoreContext } from "../store";
 import { Badge } from "antd";
 import { CartIcon } from "./Icons";
-import { pageContentsSet, activeNavItemSet } from "../actions";
+import { setPage } from "../actions";
 import { getJSON } from "../api";
 
 export default function Header({ title }) {
@@ -15,8 +15,7 @@ export default function Header({ title }) {
 
   const { dispatch } = useContext(StoreContext);
   const onClickHeader = () => {
-    pageContentsSet(dispatch, "NORDIC NEST Shopping Cart", getJSON("/"));
-    activeNavItemSet(dispatch, "/");
+    setPage(dispatch, "/",  "NORDIC NEST Shopping Cart");
   };
 
   return (
