@@ -1,11 +1,25 @@
-import {useRef} from "react"
-import { Card,Button,Form,Input } from "antd"
+import { useState} from "react"
+import { Card,Button,Form,Input,Alert } from "antd"
 import { Link } from "react-router-dom";
+import {useAuth} from "../store/AuthContext"
 import { GoogleAuth } from "../api"
 
 export default function Sign() {
-    const emailRef=useRef()
-    const passwordRef=useRef()
+    const {login,currentUser} = useAuth()
+    const [ error ,setError] = useState("")
+    const [ loading ,setLoading] = useState(false)
+
+
+    async function signin(value){
+        try{
+            setError('')
+            setLoading(true)
+            await login(value.email,value.password)
+        }catch{
+            setError('Failed to login')
+        }
+        setLoading(false)
+    }
 
     const layout = {
         labelCol: {
@@ -21,26 +35,19 @@ export default function Sign() {
           span: 16,
         },
       };
-        const onFinish = (values) => {
-          console.log('Success:', values);
-        };
-      
-        const onFinishFailed = (errorInfo) => {
-          console.log('Failed:', errorInfo);
-        };
     return (
       <Card>
+          {error && <Alert message={error} type="error" />}
         <Form
             {...layout}
             name="basic"
             initialValues={{ remember: true }}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
+            onFinish={signin}
             >
             <Form.Item
                 label="Email"
-                name="Email"
-                ref={emailRef}
+                name="email"
+                hasFeedback
                 rules={[{ required: true, message: 'Please input your Email!' }]}
             >
                 <Input />
@@ -49,14 +56,14 @@ export default function Sign() {
             <Form.Item
                 label="Password"
                 name="password"
-                ref={passwordRef}
+                hasFeedback
                 rules={[{ required: true, message: 'Please input your password!' }]}
             >
                 <Input.Password />
             </Form.Item>
 
             <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
+                <Button disabled={loading} type="primary" htmlType="submit">
                     Submit
                 </Button>
             </Form.Item>
@@ -67,7 +74,7 @@ export default function Sign() {
         <div>
             Don't have an account?
         </div>
-        <Link to="/SignOn">Sign Up</Link>)
+        <Link to="/SignOn">Sign Up</Link>
       </Card>
     );
 }

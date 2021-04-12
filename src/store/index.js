@@ -1,6 +1,5 @@
 import { createContext } from "react";
 import useReducerWithThunk from "use-reducer-thunk";
-import products from "../json/products.json";
 import {
   SET_PAGE_TITLE,
   SET_PAGE_CONTENT,

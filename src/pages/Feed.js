@@ -9,9 +9,6 @@ const { Header, Content, Footer } = Layout;
 function Feed() {
   return (
     <Layout className="container main-layout">
-      <Layout className="bg-gray nav-area">
-        <NavBar />
-      </Layout>
       <Layout className="bg-gray main-area">
         <Header className="layout-header">
           <AppHeader title="Feed JSON Page" />

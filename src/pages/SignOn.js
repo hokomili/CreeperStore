@@ -2,11 +2,13 @@ import { Layout } from 'antd';
 import AppHeader from "../components/Header";
 import AppFooter from "../components/Footer";
 import Signup from"../components/Signup";
+import {AuthProvider} from "../store/AuthContext"
 
 const { Header, Content, Footer } = Layout;
 
 function SignOn() {
     return (
+      <AuthProvider>
       <Layout className="container main-layout">
          <Layout className="bg-gray">     
             <Header className="layout-header">
@@ -20,6 +22,7 @@ function SignOn() {
             </Footer>
          </Layout>
       </Layout>
+      </AuthProvider>
    );
 }
 

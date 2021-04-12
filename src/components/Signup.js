@@ -1,11 +1,27 @@
-import {useRef} from "react"
-import { Card,Button,Form,Input } from "antd"
+import { useState} from "react"
+import { Card,Button,Form,Input,Alert } from "antd"
 import { GoogleAuth } from "../api"
+import {useAuth} from "../store/AuthContext"
 import { Link } from "react-router-dom"
+
+
+
 export default function Signup() {
-    const emailRef=useRef()
-    const passwordRef=useRef()
-    const passwordConfirmRef=useRef()
+    const {signup,currentUser} = useAuth()
+    const [ error ,setError] = useState("")
+    const [ loading ,setLoading] = useState(false)
+
+
+    async function registration(value){
+        try{
+            setError('')
+            setLoading(true)
+            await signup(value.email,value.password)
+        }catch{
+            setError('Failed to create an account')
+        }
+        setLoading(false)
+    }
 
     const layout = {
         labelCol: {
@@ -21,27 +37,19 @@ export default function Signup() {
           span: 16,
         },
       };
-        const onFinish = (values) => {
-          console.log('Success:', values);
-        };
-      
-        const onFinishFailed = (errorInfo) => {
-          console.log('Failed:', errorInfo);
-        };
         
     return (
         <Card>
+            {error && <Alert variant="danger">{error}</Alert>}
             <Form
                 {...layout}
                 name="basic"
                 initialValues={{ remember: true }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
+                onFinish={registration}
                 >
                 <Form.Item
                     label="Email"
-                    name="Email"
-                    ref={emailRef}
+                    name="email"
                     rules={[{ required: true, message: 'Please input your Email!' }]}
                 >
                     <Input />
@@ -50,23 +58,38 @@ export default function Signup() {
                 <Form.Item
                     label="Password"
                     name="password"
-                    ref={passwordRef}
+                    hasFeedback
                     rules={[{ required: true, message: 'Please input your password!' }]}
                 >
                     <Input.Password />
                 </Form.Item>
 
                 <Form.Item
-                    label="Confirm"
-                    name="Confirm"
-                    ref={passwordConfirmRef}
-                    rules={[{ required: true, message: 'Confirm password!' }]}
+                    name="confirm"
+                    label="Confirm Password"
+                    dependencies={['password']}
+                    hasFeedback
+                    rules={[
+                    {
+                        required: true,
+                        message: 'Please confirm your password!',
+                    },
+                    ({ getFieldValue }) => ({
+                        validator(_, value) {
+                        if (!value || getFieldValue('password') === value) {
+                            return Promise.resolve();
+                        }
+
+                        return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                        },
+                    }),
+                    ]}
                 >
                     <Input.Password />
                 </Form.Item>
 
                 <Form.Item {...tailLayout}>
-                    <Button type="primary" htmlType="submit">
+                    <Button disabled={loading} type="primary" htmlType="submit">
                         Submit
                     </Button>
                 </Form.Item>
