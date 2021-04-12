@@ -1,9 +1,8 @@
 import { useContext } from "react";
 import { Layout } from 'antd';
-import NavBar from "../components/NavBar";
 import AppHeader from "../components/Header"
+import AppContent from "../components/Content"
 import AppFooter from "../components/Footer"
-import ProductList from "../components/ProductList";
 import { StoreContext } from "../store"
 
 const { Header, Content, Footer } = Layout;
@@ -11,21 +10,18 @@ const { Header, Content, Footer } = Layout;
 function Home() {
   const { state: { page: { title, products } } } = useContext(StoreContext);
   return (
-    <Layout className="container main-layout">
-      <Layout className="bg-gray">
-        <NavBar />
-      </Layout>
-      <Layout className="bg-gray">
-        <Header className="layout-header">
+    <Layout className="bg-gray main-layout">
+        <Header style={{ position: 'fixed', zIndex: 1, width:'100%'}} className="layout-header">
           <AppHeader title={title} />
         </Header>
+        <Layout className="bg-gray">
         <Content className="layout-content">
-          <ProductList products={products} />
+          <AppContent />
         </Content>
         <Footer className="layout-footer">
           <AppFooter />
         </Footer>
-      </Layout>
+        </Layout>
     </Layout>
   );
 }

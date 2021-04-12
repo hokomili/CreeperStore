@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
 import { Layout } from 'antd';
-import NavBar from "../components/NavBar";
 import AppHeader from "../components/Header"
 import AppFooter from "../components/Footer"
 import ProductDetail from "../components/ProductDetail";
@@ -15,22 +14,19 @@ function Product({ match }) {
    useEffect(() => setProductDetail(dispatch, match.params.productId, 0),[])
 
    return (
-      <Layout className="container main-layout">
-         <Layout className="bg-gray">
-            <NavBar />
-         </Layout>
-         <Layout className="bg-gray">     
-            <Header className="layout-header">
-               <AppHeader title="Product Detail" />
-            </Header>
-            <Content className="layout-content">
-               <ProductDetail />
-            </Content>
-            <Footer className="layout-footer">
-               <AppFooter />
-            </Footer>
-         </Layout>
-      </Layout>
+      <Layout className="bg-gray main-layout">
+         <Header style={{ position: 'fixed', zIndex: 1, width:'100%'}} className="layout-header">
+         <AppHeader title="Product Detail" />
+         </Header>
+        <Layout className="bg-gray">
+        <Content className="layout-content">
+        <ProductDetail />
+        </Content>
+        <Footer className="layout-footer">
+          <AppFooter />
+        </Footer>
+        </Layout>
+    </Layout>
    );
 }
 

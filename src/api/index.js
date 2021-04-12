@@ -10,7 +10,6 @@ import furniture from "../json/furniture.json";
 import homeAccessories from "../json/home-accessories";
 import lighting from "../json/lighting.json";
 import tableware from "../json/tableware.json";
-import firebaseui from "firebaseui";
 
 // Initialize the FirebaseUI Widget using Firebase.
 

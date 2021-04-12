@@ -10,9 +10,6 @@ const { Header, Content, Footer } = Layout;
 function ShoppingCart() {
    return (
       <Layout className="container main-layout">
-         <Layout className="bg-gray">
-            <NavBar />
-         </Layout>
          <Layout className="bg-gray">     
             <Header className="layout-header">
                <AppHeader title="Shopping Cart" />
