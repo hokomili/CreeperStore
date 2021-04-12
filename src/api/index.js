@@ -10,6 +10,7 @@ import furniture from "../json/furniture.json";
 import homeAccessories from "../json/home-accessories";
 import lighting from "../json/lighting.json";
 import tableware from "../json/tableware.json";
+import firebaseui from "firebaseui";
 
 // Initialize the FirebaseUI Widget using Firebase.
 
@@ -24,9 +25,19 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 // REFERENCE PRODUCTS
+export const auth =firebase.auth();
+export const firestore =firebase.firestore();
+
+const GoogleProvider= new firebase.auth.GoogleAuthProvider();
+GoogleProvider.setCustomParameters({prompt:'select_account'});
+
 const productsCollectionRef = firebase.firestore().collection("products");
 const productsDocRef = productsCollectionRef.doc("json");
 const allProductsCollectionRef = productsDocRef.collection("allProducts");
+
+export const GoogleAuth =()=>{
+  auth.signInWithPopup(GoogleProvider);
+}
 
 export const getProductById = async (productId) => {
   // REFERENCE PRODUCTS COLLECTION

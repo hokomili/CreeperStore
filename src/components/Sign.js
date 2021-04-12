@@ -1,9 +1,11 @@
-import { Card } from "antd"
-
+import { Card,Button } from "antd"
+import { GoogleAuth } from "../api"
 export default function Sign() {
     return (
       <Card>
-          something
+          <Button className="googleauth" onClick={GoogleAuth}>
+              hi
+          </Button>
       </Card>
     );
   }
