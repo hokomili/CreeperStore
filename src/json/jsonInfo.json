@@ -5,6 +5,11 @@
       "url": "/"
    },
    {
+      "title": "Profile Page",
+      "name": "allProducts",
+      "url": "/Profile"
+   },
+   {
       "title": "Cookware",
       "name": "Cookware",
       "url": "/cookware"

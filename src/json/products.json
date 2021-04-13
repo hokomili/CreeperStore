@@ -1,6 +1,16 @@
 [
   {
-    "id": "1tE4nK",
+    "category": "Textile",
+    "name": "Domino wool throw",
+    "sku": "sku_313354",
+    "price": 82,
+    "image": "https://www.nordicnest.com/4ae45d/globalassets/product-pictures/klippan-yllefabrik/p_17526-07-02.jpg?quality=80&format=webp&width=740",
+    "description": "Keep warm with the cozy Domino wool throw from Klippan Yllefabrik. Klippan Yllefabric was founded in 1879 with a philosophy to combine Swedish ",
+    "description_long": "Keep warm with the cozy Domino wool throw from Klippan Yllefabrik. Klippan Yllefabric was founded in 1879 with a philosophy to combine Swedish design with the traditional knowledge of textiles. This particular throw has a simple, classic pattern design and is available in different colors.",
+    "currency": "USD",
+    "countInStock": 10    
+  },
+  {
     "category": "Textile",
     "name": "Pom Pom cushion 45x45 cm",
     "sku": "sku_313355",
@@ -12,7 +22,6 @@
     "countInStock": 3    
   },
   {
-    "id": "IuFGYl",
     "category": "Tableware",
     "name": "Rustic mug",
     "sku": "sku_313356",
@@ -24,7 +33,17 @@
     "countInStock": 6 
   },
   {
-    "id": "VfcByl",
+    "category": "Tableware",
+    "name": "Essence white wine glass 4-pack",
+    "sku": "sku_313358",
+    "price": 63,
+    "image": "https://www.nordicnest.com/4ae737/globalassets/product-pictures/iittala/p_17479-01-04.jpg?quality=80&format=webp&width=740",
+    "description": "These Essence white wine glasses were designed by Alfredo Häberli in 2001. The style and the elegance of these glasses will make your dining",
+    "description_long": "These Essence white wine glasses were designed by Alfredo Häberli in 2001. The style and the elegance of these glasses will make your dining",
+    "currency": "USD",
+    "countInStock": 3 
+  },
+  {
     "category": "Home Accessories",
     "name": "Triplets easter rabbit 3-pack",
     "sku": "sku_622147",
@@ -36,7 +55,17 @@
     "countInStock": 4 
   },
   {
-    "id": "1yF2Ib",
+    "category": "Home Accessories",
+    "name": "Nova pedal bin",
+    "sku": "sku_622146",
+    "price": 83,
+    "image": "https://www.nordicnest.com/4ae712/globalassets/product-pictures/zone-denmark/p_31008-01-02.jpg?quality=80&format=webp&width=740",
+    "description": "The Nova bin by the Danish brand Zone Denmark is the perfect little bin for the bathroom. The bin opens with a foot pedal and is easy to",
+    "description_long": "The Nova bin by the Danish brand Zone Denmark is the perfect little bin for the bathroom. The bin opens with a foot pedal and is easy to empty when needed. Available in several wonderful colours and beautiful in combination with other pieces from the Nova collection.",
+    "currency": "USD",
+    "countInStock": 5 
+  },
+  {
     "category": "Lighting",
     "name": "Silvia lamp white",
     "sku": "sku_125983",
@@ -48,7 +77,17 @@
     "countInStock": 5
   },
   {
-    "id": "x5m8g3",
+    "category": "Lighting",
+    "name": "Luciakör candle arch",
+    "sku": "sku_125982",
+    "price": 83,
+    "image": "https://www.nordicnest.com/4ae971/globalassets/product-pictures/star-trading/p_30038-01-02.jpg?quality=80&format=webp&width=740",
+    "description": "The charming Luciakör electric advent candle holder is a Christmas classic from Star Trading. This candle holder is made of painted wood ...",
+    "description_long": "The charming Luciakör electric advent candle holder is a Christmas classic from Star Trading. This candle holder is made of painted wood with carved figures representing Christmas characters that together sing in the choir. All figures have a small light that illuminates the room gently.",
+    "currency": "USD",
+    "countInStock": 8
+  },  
+  {
     "category": "Furniture",
     "name": "High Dot stool leather",
     "sku": "sku_559961",
@@ -60,7 +99,17 @@
     "countInStock": 2 
   },
   {
-    "id": "6Bh3pq",
+    "category": "Furniture",
+    "name": "Frame 49 sidotable with tre lådor",
+    "sku": "sku_559960",
+    "price": 1151,
+    "image": "https://www.nordicnest.com/4ae2b0/globalassets/product-pictures/by-lassen/43008-05-01_01.jpg?quality=80&format=webp&width=740",
+    "description": "The Frame 49 side table with three drawers from By Lassen is a stylish piece of interior decor that beautifully combines functionality and ",
+    "description_long": "The Frame 49 side table with three drawers from By Lassen is a stylish piece of interior decor that beautifully combines functionality and aesthetics. The side table has been fashioned from a stately wooden box of drawers housed within a lacquered steel frame. The Frame 35 fits perfectly by the sofa or as a bedside table: it can also be paired with other furnishings to create a larger ensemble in the living room or hallway. Available in a variety of colours.",
+    "currency": "USD",
+    "countInStock": 4 
+  },  
+  {
     "category": "Cookware",
     "name": "Satake Kuro chopper",
     "sku": "sku_119140",
@@ -70,5 +119,16 @@
     "description_long": "The Satake Kuro Chopper is a handmade and rough forged knife of exceptional quality. It has been developed with a focus on sharpness, precision and strength, as evidenced by the 5CR15MOV steel of the blade, which has been processed eight times over. The knife even has a hole to hang it up when not in use. The beautiful burnt wood handle provides excellent stability to an already elegant knife. All of the knives in Satake's Kuro series make perfect gifts for cooking enthusiasts who are looking for high quality knives with a little something special.",
     "currency": "USD",
     "countInStock": 7 
+  },
+  {
+    "category": "Cookware",
+    "name": "Eva Solo knife holder",
+    "sku": "sku_119139",
+    "price": 102,
+    "image": "https://www.nordicnest.com/4ae8b9/globalassets/product-pictures/eva-solo/p_11417-01-01.jpg?quality=80&format=webp&width=740",
+    "description": "The stylish and functional knife holder from Eva Solo is available in aluminum or black anodized aluminum and has an easy-to-clean pleated",
+    "description_long": "The stylish and functional knife holder from Eva Solo is available in aluminum or black anodized aluminum and has an easy-to-clean pleated removable plastic insert. For all sorts of knives and kitchen tools",
+    "currency": "USD",
+    "countInStock": 5 
   }
 ]

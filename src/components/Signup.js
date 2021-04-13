@@ -2,7 +2,7 @@ import { useState} from "react"
 import { Card,Button,Form,Input,Alert } from "antd"
 import { GoogleAuth } from "../api"
 import {useAuth} from "../store/AuthContext"
-import { Link } from "react-router-dom"
+import { Link,useHistory } from "react-router-dom"
 
 
 
@@ -10,6 +10,7 @@ export default function Signup() {
     const {signup,currentUser} = useAuth()
     const [ error ,setError] = useState("")
     const [ loading ,setLoading] = useState(false)
+    const history=useHistory()
 
 
     async function registration(value){
@@ -17,6 +18,7 @@ export default function Signup() {
             setError('')
             setLoading(true)
             await signup(value.email,value.password)
+            history.push("/")
         }catch{
             setError('Failed to create an account')
         }

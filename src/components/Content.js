@@ -4,7 +4,7 @@ import Category from "../components/Category"
 
 export default function Content() {
     return (
-        <content className="content">
+        <div className="content">
             <img style={{width:'100%'}} src="https://s3-alpha-sig.figma.com/img/40bd/ab4b/3152f5558106452e2227be7e95030ad5?Expires=1619395200&Signature=T1T8Y0BzQIP7HCR1OZazASz6rpMEL~~2B3IBiaowHO~KuEnIS0KAUfGjZhDEvV89Asu~nAKPsSZTG1Br~oTw-PoQRYntwd-f5xBv5L2dInsZBBFD1tFBSA7gGUkYryMxCTnte9TPoQSrxH-I2F9W~eFzp8dJ~olTBtDCv013lY~upGFR8gv1bA-D8t7S6NfBJqGO9dLRTsjq0KPhTpJAIcIFD2g71XE9tg6GuOA26bofurwMWqjbis6MoQaWVCCGKOCTOEuXgAjqYpXV9pUE20xz6NRW53RQ1gZpP~IpfUtI38pPXU-wGF13X8Dy4UXjg0IAIxFhl7Msqb5iMrNoEg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="" />
             <Row className="container">
                 <News />
@@ -13,6 +13,6 @@ export default function Content() {
             <Row className="container">
                 <Category />
             </Row>
-        </content>           
+        </div>           
     );
 }

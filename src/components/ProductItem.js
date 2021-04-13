@@ -1,10 +1,18 @@
+import { useContext } from "react";
 import { Card } from "antd"
 import { Link } from 'react-router-dom';
+import { StoreContext } from "../store"
+import { setProductDetail } from "../actions";
 
 export default function ProductItem({ product }) {
+    const { dispatch } = useContext(StoreContext);
     return (
         <Card className="bg-gray product">
-            <Link to={`/product/${product.id}`}>
+            <Link to={`/products/${product.category}/${product.id}`} 
+                    onClick={()=>{
+                        setProductDetail(dispatch, product.id, 1);
+                     }}
+            >
                 <img
                     style={{ width: '100%' }}
                     src={product.image}
@@ -21,7 +29,10 @@ export default function ProductItem({ product }) {
                     {product.description}
                 </p>
                 <div className="product-more">
-                    <Link to={`/product/${product.id}`} className="product-link">
+                    <Link to={`/products/${product.category}/${product.id}`} className="product-link"
+                    onClick={()=>{
+                        setProductDetail(dispatch, product.id, 1);
+                     }}>
                         See More ...
                     </Link>
                     <span

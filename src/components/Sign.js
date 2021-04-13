@@ -1,6 +1,6 @@
 import { useState} from "react"
 import { Card,Button,Form,Input,Alert } from "antd"
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import {useAuth} from "../store/AuthContext"
 import { GoogleAuth } from "../api"
 
@@ -8,6 +8,7 @@ export default function Sign() {
     const {login,currentUser} = useAuth()
     const [ error ,setError] = useState("")
     const [ loading ,setLoading] = useState(false)
+    const history =useHistory()
 
 
     async function signin(value){
@@ -15,6 +16,7 @@ export default function Sign() {
             setError('')
             setLoading(true)
             await login(value.email,value.password)
+            history.push("/Profile")
         }catch{
             setError('Failed to login')
         }

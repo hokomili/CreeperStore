@@ -12,7 +12,7 @@ export default function Category() {
           xxl={{ span: 6 }}
         >
             <Card className="bg-gray product">
-                <Link to={`/product/cookware`}>
+                <Link to="/product/cookware/">
                     <img
                         style={{ width: '200px', height:'200px'}}
                         src=""
@@ -21,13 +21,13 @@ export default function Category() {
             </Card>
             </Col>
             <Col 
-          key={1} 
+          key={2} 
           lg={{ span: 12 }} 
           xl={{ span: 8 }}
           xxl={{ span: 6 }}
         >
             <Card className="bg-gray product">
-                <Link to={`/product/furniture`}>
+                <Link to="/product/furniture">
                     <img
                         style={{ width: '200px' ,height:'200px'}}
                         src=""
@@ -36,13 +36,13 @@ export default function Category() {
             </Card>
             </Col>
             <Col 
-          key={1} 
+          key={3} 
           lg={{ span: 12 }} 
           xl={{ span: 8 }}
           xxl={{ span: 6 }}
         >
             <Card className="bg-gray product">
-                <Link to={`/product/lighting`}>
+                <Link to="product/lighting">
                     <img
                         style={{ width: '200px' ,height:'200px'}}
                         src=""

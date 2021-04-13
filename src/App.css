@@ -291,7 +291,16 @@ body {
   min-height: 100vh;
   transition: all 0.25s linear;
 }
-
+.profile-nav-bar{
+  background-color: #111828;
+  display: flex;
+  height: 20rem;
+  width:100%;
+  flex-direction: row;
+  padding: 2rem;
+  padding-top: 4rem;
+  transition: all 0.25s linear;
+}
 .nav-item {
   font-size: 1.4rem;
   margin-top: 2rem;
