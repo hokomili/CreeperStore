@@ -1,5 +1,5 @@
 import React,{ useContext,useEffect,useState } from "react"
-import {auth} from "../api"
+import {auth,GoogleProvider} from "../api"
 const AuthContext=React.createContext()
 
 export function useAuth(){
@@ -9,12 +9,17 @@ export function useAuth(){
 export function AuthProvider({children}){
     const [currentUser,setCurrentUser]=useState()
     const [loading,setLoading]=useState(true)
+    GoogleProvider.setCustomParameters({prompt:'select_account'});
+    function googleauth(){
+        return auth.signInWithPopup(GoogleProvider);
+    }
     function signup(email,password){
         return auth.createUserWithEmailAndPassword(email,password)
     }
     function login(email,password){
         return auth.signInWithEmailAndPassword(email,password)
     }
+    
 
     useEffect(()=>{
         const unsubscribe = auth.onAuthStateChanged(user =>{
@@ -28,6 +33,7 @@ export function AuthProvider({children}){
         currentUser,
         login,
         signup,
+        googleauth,
     }
     return(
         <AuthContext.Provider value={value}>

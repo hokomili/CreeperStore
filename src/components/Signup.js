@@ -1,13 +1,12 @@
 import { useState} from "react"
 import { Card,Button,Form,Input,Alert } from "antd"
-import { GoogleAuth } from "../api"
 import {useAuth} from "../store/AuthContext"
 import { Link,useHistory } from "react-router-dom"
 
 
 
 export default function Signup() {
-    const {signup,currentUser} = useAuth()
+    const {signup,googleauth} = useAuth()
     const [ error ,setError] = useState("")
     const [ loading ,setLoading] = useState(false)
     const history=useHistory()
@@ -18,13 +17,22 @@ export default function Signup() {
             setError('')
             setLoading(true)
             await signup(value.email,value.password)
-            history.push("/")
+            history.push("/Profile")
         }catch{
             setError('Failed to create an account')
         }
         setLoading(false)
     }
-
+    async function google(){
+        try{
+        setLoading(true)
+        await googleauth()
+        history.push("/Profile")
+        }catch{
+            setError('Failed to google')
+        }
+        setLoading(false)
+    }
     const layout = {
         labelCol: {
           span: 8,
@@ -96,7 +104,7 @@ export default function Signup() {
                     </Button>
                 </Form.Item>
             </Form>
-            <Button className="googleauth" onClick={GoogleAuth}>
+            <Button className="googleauth" onClick={google}>
                 Sign in with google
             </Button>
             <div>

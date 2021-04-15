@@ -26,17 +26,11 @@ firebase.initializeApp(firebaseConfig);
 // REFERENCE PRODUCTS
 export const auth =firebase.auth();
 export const firestore =firebase.firestore();
-
-const GoogleProvider= new firebase.auth.GoogleAuthProvider();
-GoogleProvider.setCustomParameters({prompt:'select_account'});
+export const GoogleProvider= new firebase.auth.GoogleAuthProvider();
 
 const productsCollectionRef = firebase.firestore().collection("products");
 const productsDocRef = productsCollectionRef.doc("json");
 const allProductsCollectionRef = productsDocRef.collection("allProducts");
-
-export const GoogleAuth =()=>{
-  auth.signInWithPopup(GoogleProvider);
-}
 
 export const getProductById = async (productId) => {
   // REFERENCE PRODUCTS COLLECTION

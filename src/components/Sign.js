@@ -2,10 +2,9 @@ import { useState} from "react"
 import { Card,Button,Form,Input,Alert } from "antd"
 import { Link,useHistory } from "react-router-dom";
 import {useAuth} from "../store/AuthContext"
-import { GoogleAuth } from "../api"
 
 export default function Sign() {
-    const {login,currentUser} = useAuth()
+    const {login,googleauth} = useAuth()
     const [ error ,setError] = useState("")
     const [ loading ,setLoading] = useState(false)
     const history =useHistory()
@@ -19,6 +18,16 @@ export default function Sign() {
             history.push("/Profile")
         }catch{
             setError('Failed to login')
+        }
+        setLoading(false)
+    }
+    async function google(){
+        try{
+        setLoading(true)
+        await googleauth()
+        history.push("/Profile")
+        }catch{
+            setError('Failed to google')
         }
         setLoading(false)
     }
@@ -70,7 +79,7 @@ export default function Sign() {
                 </Button>
             </Form.Item>
         </Form>
-        <Button className="googleauth" onClick={GoogleAuth}>
+        <Button className="googleauth" onClick={google}>
               Sign in with google
         </Button>
         <div>
