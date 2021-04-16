@@ -66,6 +66,27 @@ export const feedProducts = () => {
     });
   })
 }
+export const handleUserProfile=async(userAuth,otherdata)=>{
+  if(!userAuth)return;
+  const {uid}=userAuth;
+  const userRef =firestore.doc(`users/${uid}`);
+  const snapshot =await userRef.get();
+  if (!snapshot.exists){
+    const{displayName,email}=userAuth;
+    const timestamp =new Date();
+    try{
+      await userRef.set({
+        displayName,
+        email,
+        createdDate:timestamp,
+        ...otherdata
+      })
+    } catch(err){
+      console.log("usererror_profile")
+    }
+  }
+  return userRef;
+}
 export const getJSON = (url) => {
   switch (url) {
     case "/":

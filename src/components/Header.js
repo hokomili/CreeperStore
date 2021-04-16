@@ -4,9 +4,10 @@ import { StoreContext } from "../store";
 import { Badge } from "antd";
 import { CartIcon } from "./Icons";
 import { setPage } from "../actions";
-import { getJSON } from "../api";
+import {useAuth} from "../store/AuthContext"
 
 export default function Header({ title }) {
+  const {currentUser}=useAuth()
   const { state: { cartItems } } = useContext(StoreContext);
 
   const count = (cartItems.length > 0) ?
@@ -33,14 +34,22 @@ export default function Header({ title }) {
           </Badge>
           <p className="cart-summary-text"> Shopping bag </p>
         </Link>
+        {currentUser?
+        <Link to="/Profile" className="header-sign-in" >
+          <Badge count={count} size={"small"} style={{ color: 'white', backgroundColor: '#6366F2' }}>
+            <CartIcon size={32} />
+          </Badge>
+          <p className="cart-summary-text">Profile </p>
+        </Link>
+        :
         <Link to="/SignIn" className="header-sign-in" >
           <Badge count={count} size={"small"} style={{ color: 'white', backgroundColor: '#6366F2' }}>
             <CartIcon size={32} />
           </Badge>
           <p className="cart-summary-text"> Sign in </p>
         </Link>
+        }
       </div>
-
       <hr className="hr-header-line" />
     </header>
   );

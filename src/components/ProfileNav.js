@@ -1,9 +1,24 @@
+import {useState}from "react"
 import NavItem from "./NavItem";
-import {Row,Col} from "antd"
-import {Link} from "react-router-dom"
+import {Row,Col, Button} from "antd"
+import {Link,useHistory} from "react-router-dom"
 import { CartIcon } from "./Icons";
+import { useAuth } from "../store/AuthContext";
+
 
 export default function ProfileNav(){
+    const [ error ,setError] = useState("")
+    const {currentUser,logout} =useAuth()
+    const history=useHistory()
+    async function signout(){
+        setError('')
+        try{
+            await logout()
+            history.push("/signin")
+        }catch{
+            setError('Failed to logout')
+        }
+    }
     return(
         <Row>
             <Row>
@@ -28,10 +43,10 @@ export default function ProfileNav(){
                 <NavItem to="/furniture" className="nav-item" activeClassName="nav-item--active">
                     Furniture
                 </NavItem>
-                <Link to="/ShoppingCart" className="header-cart-summary" >
+                <Button className="logout" onClick={signout} >
                     <CartIcon size={32} />
-                    <p className="cart-summary-text"> Shopping bag </p>
-                </Link>
+                    <p className="cart-summary-text"> Log out </p>
+                </Button>
             </Row>
         </Row>
     )
