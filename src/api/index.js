@@ -69,8 +69,12 @@ export const feedProducts = () => {
 export const handleUserProfile=async(userAuth,otherdata)=>{
   if(!userAuth)return;
   const {uid}=userAuth;
-  const userRef =firestore.doc(`users/${uid}`);
+  const usersRef = firebase.firestore().collection("users")
+  console.log(usersRef)
+  const userRef = usersRef.doc(`${uid}`);
+  console.log(userRef)
   const snapshot =await userRef.get();
+  const userdata = snapshot.data();
   if (!snapshot.exists){
     const{displayName,email}=userAuth;
     const timestamp =new Date();
@@ -85,8 +89,9 @@ export const handleUserProfile=async(userAuth,otherdata)=>{
       console.log("usererror_profile")
     }
   }
-  return userRef;
+  return [userRef,userdata]
 }
+
 export const getJSON = (url) => {
   switch (url) {
     case "/":

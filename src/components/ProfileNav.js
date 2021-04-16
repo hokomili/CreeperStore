@@ -8,7 +8,7 @@ import { useAuth } from "../store/AuthContext";
 
 export default function ProfileNav(){
     const [ error ,setError] = useState("")
-    const {currentUser,logout} =useAuth()
+    const {currentUser,logout,Name} =useAuth()
     const history=useHistory()
     async function signout(){
         setError('')
@@ -43,9 +43,9 @@ export default function ProfileNav(){
                 <NavItem to="/furniture" className="nav-item" activeClassName="nav-item--active">
                     Furniture
                 </NavItem>
-                <Button className="logout" onClick={signout} >
-                    <CartIcon size={32} />
-                    <p className="cart-summary-text"> Log out </p>
+                <p>{Name}</p>
+                <Button className="logout" onClick={signout}  >
+                    <p> Log out </p>
                 </Button>
             </Row>
         </Row>

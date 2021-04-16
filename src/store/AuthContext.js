@@ -1,4 +1,6 @@
 import React,{ useContext,useEffect,useState } from "react"
+import firebase from "firebase/app"
+import "firebase/firestore";
 import {auth,GoogleProvider,handleUserProfile} from "../api"
 const AuthContext=React.createContext()
 
@@ -9,6 +11,7 @@ export function useAuth(){
 export function AuthProvider({children}){
     const [currentUser,setCurrentUser]=useState()
     const [loading,setLoading]=useState(true)
+    const [Name,setName]=useState("")
     GoogleProvider.setCustomParameters({prompt:'select_account'});
     function googleauth(){
         return auth.signInWithPopup(GoogleProvider);
@@ -29,10 +32,16 @@ export function AuthProvider({children}){
     useEffect(()=>{
         const unsubscribe = auth.onAuthStateChanged(async user =>{
             setCurrentUser(user)
+            console.log(user)
             if(user){
-                const userRef=await handleUserProfile(user)
+                var values =await handleUserProfile(user)
+                var userRef=values[0]
+                var userdata=values[1]
+                console.log(userRef)
                 userRef.onSnapshot(snapshot=>{
-                    console.log("it changed")
+                    console.log(snapshot);
+                    setName(userdata.displayName)
+                    console.log(userdata.displayName);
                 })
             }
             setLoading(false)
@@ -42,6 +51,7 @@ export function AuthProvider({children}){
 
     const value={
         currentUser,
+        Name,
         login,
         signup,
         googleauth,
