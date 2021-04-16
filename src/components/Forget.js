@@ -3,21 +3,21 @@ import { Card,Button,Form,Input,Alert } from "antd"
 import { Link,useHistory } from "react-router-dom";
 import {useAuth} from "../store/AuthContext"
 
-export default function Sign() {
-    const {login,googleauth} = useAuth()
+export default function Forget() {
+    const {forget,googleauth} = useAuth()
     const [ error ,setError] = useState("")
     const [ loading ,setLoading] = useState(false)
     const history =useHistory()
 
 
-    async function signin(value){
+    async function sendemail(value){
         try{
             setError('')
             setLoading(true)
-            await login(value.email,value.password)
-            history.push("/Profile")
+            await forget(value.email)
+            setError('password reset email sent')
         }catch{
-            setError('Failed to login')
+            setError('Failed to reset passwrod')
         }
         setLoading(false)
     }
@@ -53,7 +53,7 @@ export default function Sign() {
             {...layout}
             name="basic"
             initialValues={{ remember: true }}
-            onFinish={signin}
+            onFinish={sendemail}
             >
             <Form.Item
                 label="Email"
@@ -62,15 +62,6 @@ export default function Sign() {
                 rules={[{ required: true, message: 'Please input your Email!' }]}
             >
                 <Input />
-            </Form.Item>
-
-            <Form.Item
-                label="Password"
-                name="password"
-                hasFeedback
-                rules={[{ required: true, message: 'Please input your password!' }]}
-            >
-                <Input.Password />
             </Form.Item>
 
             <Form.Item {...tailLayout}>
@@ -83,10 +74,13 @@ export default function Sign() {
               Sign in with google
         </Button>
         <div>
+            Back to Login
+        </div>
+        <Link to="/SignIn">Login</Link>
+        <div>
             Don't have an account?
         </div>
         <Link to="/SignOn">Sign Up</Link>
-        <Link to="/Forget-Password">Forget Password?</Link>
       </Card>
     );
 }

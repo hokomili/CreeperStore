@@ -6,6 +6,7 @@ import Product from './pages/Product'
 import ShoppingCart from './pages/ShoppingCart';
 import SignIn from './pages/SignIn';
 import SignOn from './pages/SignOn';
+import FP from './pages/Forget-Password'
 import Feed from './pages/Feed'
 import Profile from './pages/Profile'
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/SignIn" component={SignIn} />
           <Route exact path="/SignOn" component={SignOn} />
           <Route exact path="/ShoppingCart" component={ShoppingCart} />
+          <Route exact path="/Forget-Password" component={FP} />
           <Route exact path="/:pageName" component={Home} />
           <Route exact path="/admin/feed-products" component={Feed} />
           <Route path="/product/:category/:productId" component={Product} />

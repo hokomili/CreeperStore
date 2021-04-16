@@ -1,5 +1,5 @@
 import React,{ useContext,useEffect,useState } from "react"
-import {auth,GoogleProvider} from "../api"
+import {auth,GoogleProvider,handleUserProfile} from "../api"
 const AuthContext=React.createContext()
 
 export function useAuth(){
@@ -22,11 +22,19 @@ export function AuthProvider({children}){
     function logout(){
         return auth.signOut()
     }
-    
+    function forget(email){
+        return auth.sendPasswordResetEmail(email)
+    }
 
     useEffect(()=>{
-        const unsubscribe = auth.onAuthStateChanged(user =>{
+        const unsubscribe = auth.onAuthStateChanged(async user =>{
             setCurrentUser(user)
+            if(user){
+                const userRef=await handleUserProfile(user)
+                userRef.onSnapshot(snapshot=>{
+                    console.log("it changed")
+                })
+            }
             setLoading(false)
         })
         return unsubscribe
@@ -38,6 +46,7 @@ export function AuthProvider({children}){
         signup,
         googleauth,
         logout,
+        forget,
     }
     return(
         <AuthContext.Provider value={value}>
