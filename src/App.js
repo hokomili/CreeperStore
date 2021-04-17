@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/Forget-Password" component={FP} />
           <Route exact path="/:pageName" component={Home} />
           <Route exact path="/admin/feed-products" component={Feed} />
-          <Route path="/product/:category/:productId" component={Product} />
+          <Route exact path="/products/:category/:productId" component={Product} />
         </Switch>
       </BrowserRouter>
     </StoreProvider>

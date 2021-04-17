@@ -4,5 +4,5 @@ export const getTitle = url => {
    const json = jsonInfo.find(
      x => x.url === url
    );
-   return json.title;
+   return json?json.title:"Hello Firework";
  }
