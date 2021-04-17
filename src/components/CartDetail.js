@@ -9,7 +9,6 @@ const { Option } = Select;
 
 export default function CartModal({ isModalVisible, toggleModal }) {
    const { state: { cartItems }, dispatch } = useContext(StoreContext);
-   const handleCancel = () => toggleModal(!isModalVisible);
    const getTotalPrice = () => {
       return (cartItems.length > 0) ?
          cartItems.reduce((sum, item) => sum + item.price * item.qty, 0)
@@ -29,10 +28,9 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                cartItems.map(item => (
                   <Col>
                      <li key={item.id} className="cart-item">
-                        <Link to={`/product/${item.id}`}>
+                        <Link to={`/products/${item.category}/${item.id}`}>
                            <div className="cart-image" onClick={()=>{
                               setProductDetail(dispatch, item.id, item.qty);
-                              handleCancel();
                            }}>
                               <img src={item.image} alt={item.name} />
                            </div>
@@ -59,7 +57,12 @@ export default function CartModal({ isModalVisible, toggleModal }) {
                            <div className="cart-price">
                               ${item.price * item.qty}
                            </div>
-                           <div className="cart-item-delete" onClick={() => removeCartItem(dispatch, item.id)}>
+                           <div className="cart-item-delete" 
+                              onClick={() => {
+                                 removeCartItem(dispatch, item.id);
+                                 //firebase.remove
+                              }}
+                           >
                               x
                            </div>
                         </div>

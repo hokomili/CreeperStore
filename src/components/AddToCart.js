@@ -22,6 +22,7 @@ export default function AddToCart() {
   const addToCart = () => {
     openNotification();
     addCartItem(dispatch, product, qty);
+    //firebase.add
   };
 
   useEffect(()=>{
