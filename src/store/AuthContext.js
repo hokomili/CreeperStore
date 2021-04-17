@@ -1,6 +1,4 @@
 import React,{ useContext,useEffect,useState } from "react"
-import firebase from "firebase/app"
-import "firebase/firestore";
 import {auth,GoogleProvider,handleUserProfile} from "../api"
 const AuthContext=React.createContext()
 
@@ -32,16 +30,12 @@ export function AuthProvider({children}){
     useEffect(()=>{
         const unsubscribe = auth.onAuthStateChanged(async user =>{
             setCurrentUser(user)
-            console.log(user)
             if(user){
                 var values =await handleUserProfile(user)
                 var userRef=values[0]
                 var userdata=values[1]
-                console.log(userRef)
                 userRef.onSnapshot(snapshot=>{
-                    console.log(snapshot);
-                    setName(userdata.displayName)
-                    console.log(userdata.displayName);
+                    userdata.displayName==null?setName(userdata.email):setName(userdata.displayName)
                 })
             }
             setLoading(false)

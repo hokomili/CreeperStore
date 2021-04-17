@@ -69,12 +69,10 @@ export const feedProducts = () => {
 export const handleUserProfile=async(userAuth,otherdata)=>{
   if(!userAuth)return;
   const {uid}=userAuth;
-  const usersRef = firebase.firestore().collection("users")
-  console.log(usersRef)
-  const userRef = usersRef.doc(`${uid}`);
-  console.log(userRef)
-  const snapshot =await userRef.get();
-  const userdata = snapshot.data();
+  const usersRef = firebase.firestore().collection("users").doc("json");
+  const userRef = usersRef.collection(`${uid}`).doc("profile");
+  var snapshot =await userRef.get();
+  var userdata =snapshot.data();
   if (!snapshot.exists){
     const{displayName,email}=userAuth;
     const timestamp =new Date();
@@ -85,11 +83,17 @@ export const handleUserProfile=async(userAuth,otherdata)=>{
         createdDate:timestamp,
         ...otherdata
       })
+      try{
+      snapshot =await userRef.get();
+      } catch(err){
+        console.log("geterror_profile")
+      }
+      userdata = snapshot.data();
     } catch(err){
       console.log("usererror_profile")
     }
   }
-  return [userRef,userdata]
+  return [userRef,userdata];
 }
 
 export const getJSON = (url) => {
