@@ -7,40 +7,7 @@
 
 }
 
-/* 
-@media (min-width: 576px) { 
-  .container {
-    width: 540px;
-  }
-} 
 
-
-@media (min-width: 768px) {
-  .container {
-    width: 720px;
-  }
-} 
-
-
-@media (min-width: 992px) {
-  .container {
-    width: 960px;
-  }
-} 
-
-
-@media (min-width: 1200px) {
-  .container {
-    width: 1140px;
-  }
-} 
-
-
-@media (min-width: 1600px) {
-  .container {
-    width: 1500px;
-  }
-}  */
 
 /* general */
  body {
@@ -1119,3 +1086,26 @@ margin-right: auto;
   height: 90px;
   background: #303E47;
 }
+
+@media (max-width: 481px) {
+
+  .nav-bar{
+
+    position: fixed;
+    width: 100vw;
+
+  }
+
+  .navbar-r{
+
+    margin-right: 50px;
+  }
+  .navbar-l{
+
+    margin-left: 50px;
+  }
+  .navbar-logo{
+    width: 79px;
+    height: 25px;
+  }
+} 
