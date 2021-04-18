@@ -63,7 +63,7 @@ export const feedProducts = () => {
     });
   })
 }
-export const feedmedias = () => {
+export const feedMedias = () => {
   products.forEach((product) => {
     const docRef = mediaCollectionRef.doc();
     const id = docRef.id;
@@ -74,7 +74,7 @@ export const feedmedias = () => {
     });
   })
 }
-export const feedmods = () => {
+export const feedMods = () => {
   products.forEach((product) => {
     const docRef = modsCollectionRef.doc();
     const id = docRef.id;
@@ -85,7 +85,7 @@ export const feedmods = () => {
     });
   })
 }
-export const feedtextures = () => {
+export const feedTextures = () => {
   products.forEach((product) => {
     const docRef = textureCollectionRef.doc();
     const id = docRef.id;
@@ -96,7 +96,7 @@ export const feedtextures = () => {
     });
   })
 }
-export const feedmaps = () => {
+export const feedMaps = () => {
   products.forEach((product) => {
     const docRef = mapsCollectionRef.doc();
     const id = docRef.id;

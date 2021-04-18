@@ -1,6 +1,6 @@
 import { Layout } from 'antd';
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import BottomFooter from "../components/BootomFooter";
 import Forget from"../components/Forget";
 
 function FP() {
@@ -8,7 +8,7 @@ function FP() {
       <Layout className="container">
         <NavBar />
         <Forget/>
-        <Footer/>  
+        <BottomFooter/>  
       </Layout>
    );
 }
