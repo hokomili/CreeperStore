@@ -108,14 +108,20 @@ export default function LoginContent() {
                         
                         <div className="btw-text"><div className="btw-line"></div></div>
                         <div className="login-from-r">
-                            <div className="login-google-bottom  ">
-                                    <Link onClick={googlelog} to='/Profile' className="login-google-text">Sign in with Google</Link>
+                            
+                                    <Link onClick={googlelog} to='/Profile' >
+                                    <div className="login-google-bottom  ">
+                                       <div className="login-google-text">Sign in with Google</div> 
                                     <img  src={google} alt="" className="google-ico"/>
-                            </div>
+                                    </div>
+                                    </Link>
+                            
                             <div className="or-text">OR</div>
-                            <div className="login-sign-bottom ">
-                                    <Link to='/Signup'  className="login-google-text">Sign Up</Link > 
-                            </div>
+                            <Link to='/Signup' >
+                                <Button className="login-sign-bottom ">
+                                    < div className="login-google-text login-signup-text">Sign Up</div > 
+                                </Button>
+                            </Link >
                         </div>                        
                     </div>
 
