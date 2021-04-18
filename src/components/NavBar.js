@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import nlogo from "../images/logo.png";
 import nmember from "../images/nav-member.png";
 import nbag from "../images/nav-shopbag.png";
-import nstore from "../images/nav-store.png";
+// import nstore from "../images/nav-store.png";
 import nsearch from "../images/nav-search.png";
 import { useContext } from "react";
 import { StoreContext } from "../store";
@@ -31,8 +31,11 @@ export default function NavBar() {
         </div>
 
             <div className="navbar-r">
-           
-            <img src ={nstore} alt="nstore" className="navbar-icon"></img>
+            <div></div>
+            <Link to='/'>
+            <img src ={nlogo} alt="nstore" className="navbar-rwd-logo"></img>
+            </Link>
+            <div >
             {currentUser?
                 <Link to="/Profile" >
                     <img src ={nmember} alt="nmember" className="navbar-icon" />
@@ -46,7 +49,7 @@ export default function NavBar() {
                 <Badge count={count} size={"small"} style={{ color: 'white', backgroundColor: '#6366F2' }}>
                     <img src ={nbag} alt="nbag" className="navbar-icon" />
                 </Badge>
-            </Link>
+            </Link></div>
             </div>
         </div>
     );
