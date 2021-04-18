@@ -5,9 +5,9 @@
       "url": "/"
    },
    {
-      "title": "Profile Page",
+      "title": "Admin",
       "name": "allProducts",
-      "url": "/Profile"
+      "url": "/admin/feed-products/"
    },
    {
       "title": "Maps",
@@ -32,7 +32,7 @@
    {
       "title": "Maps",
       "name": "Latest",
-      "url": "/Maps/Lastest"
+      "url": "/Maps/Latest"
    },
    {
       "title": "Cookware",

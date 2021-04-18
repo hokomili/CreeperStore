@@ -6,3 +6,9 @@ export const getTitle = url => {
    );
    return json?json.title:"Hello Firework";
  }
+ export const getName = url => {
+  const json = jsonInfo.find(
+    x => x.url === url
+  );
+  return json?json.name:"allProducts";
+}

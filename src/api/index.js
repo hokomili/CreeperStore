@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import jsonInfo from "../json/jsonInfo.json";
-import products from "../json/maps-item.json";
+import products from "../json/products.json";
 
 // Initialize the FirebaseUI Widget using Firebase.
 

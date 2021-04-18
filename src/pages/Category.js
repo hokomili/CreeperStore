@@ -10,7 +10,6 @@ import { setPage } from "../actions";
 import {getTitle} from "../utils"
 function Category() {
   const { state: { page: { title } }, dispatch } = useContext(StoreContext);
-
     useEffect(() => {
       const url = window.location.pathname;
       setPage(dispatch, url, getTitle(url))
@@ -19,7 +18,7 @@ function Category() {
     <Layout className="container">
         <NavBar />
         <ProductHeader/>
-        <ProductNav/>
+        <ProductNav />
         <ProductList/>
         <PdFooter/>  
     </Layout>
