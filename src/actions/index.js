@@ -13,7 +13,7 @@ import {
   FAIL_PRODUCTS_REQUEST,
 } from "../utils/constants";
 
-import { getProducts, getProductById, feedProducts } from "../api";
+import { getProducts, getProductById, feedProducts ,feedMaps,feedMedias,feedMods,feedTextures } from "../api";
 
 export const addCartItem = (dispatch, product, qty) => {
   const item = {
@@ -42,6 +42,46 @@ export const feedJSONToFirebase = async (dispatch) => {
   dispatch({ type: BEGIN_PRODUCTS_FEED });
   try {
     await feedProducts();
+    dispatch({ type: SUCCESS_PRODUCTS_FEED });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: FAIL_PRODUCTS_FEED, payload: error });
+  }
+}
+export const feedJSON2ToFirebase = async (dispatch) => {
+  dispatch({ type: BEGIN_PRODUCTS_FEED });
+  try {
+    await feedMaps();
+    dispatch({ type: SUCCESS_PRODUCTS_FEED });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: FAIL_PRODUCTS_FEED, payload: error });
+  }
+}
+export const feedJSON3ToFirebase = async (dispatch) => {
+  dispatch({ type: BEGIN_PRODUCTS_FEED });
+  try {
+    await feedTextures();
+    dispatch({ type: SUCCESS_PRODUCTS_FEED });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: FAIL_PRODUCTS_FEED, payload: error });
+  }
+}
+export const feedJSON4ToFirebase = async (dispatch) => {
+  dispatch({ type: BEGIN_PRODUCTS_FEED });
+  try {
+    await feedMods();
+    dispatch({ type: SUCCESS_PRODUCTS_FEED });
+  } catch (error) {
+    console.log(error);
+    dispatch({ type: FAIL_PRODUCTS_FEED, payload: error });
+  }
+}
+export const feedJSON5ToFirebase = async (dispatch) => {
+  dispatch({ type: BEGIN_PRODUCTS_FEED });
+  try {
+    await feedMedias();
     dispatch({ type: SUCCESS_PRODUCTS_FEED });
   } catch (error) {
     console.log(error);

@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Card, Button } from "antd";
-import { feedJSONToFirebase } from "../actions"
+import { feedJSONToFirebase,feedJSON2ToFirebase,feedJSON3ToFirebase,feedJSON4ToFirebase,feedJSON5ToFirebase } from "../actions"
 import { StoreContext } from "../store";
 
 export default function Feeder() {
@@ -24,13 +24,43 @@ export default function Feeder() {
                      <span style={{ marginLeft: 12 }}>Feed</span>
                   </Button>
                ) : (
-                  <Button
-                     className="cart-modal-btn"
-                     type="primary"
-                     onClick={() => feedJSONToFirebase(dispatch)}
-                  >
-                     <span style={{ marginLeft: 12 }}>Feed</span>
-                  </Button>
+                  <div>
+                     <Button
+                        className="cart-modal-btn"
+                        type="primary"
+                        onClick={() => feedJSONToFirebase(dispatch)}
+                     >
+                        <span style={{ marginLeft: 12 }}>Feed</span>
+                     </Button>
+                     <Button
+                        className="cart-modal-btn"
+                        type="primary"
+                        onClick={() => feedJSON2ToFirebase(dispatch)}
+                     >
+                        <span style={{ marginLeft: 12 }}>maps</span>
+                     </Button>
+                     <Button
+                        className="cart-modal-btn"
+                        type="primary"
+                        onClick={() => feedJSON3ToFirebase(dispatch)}
+                     >
+                        <span style={{ marginLeft: 12 }}>texture</span>
+                     </Button>
+                     <Button
+                        className="cart-modal-btn"
+                        type="primary"
+                        onClick={() => feedJSON4ToFirebase(dispatch)}
+                     >
+                        <span style={{ marginLeft: 12 }}>mod</span>
+                     </Button>
+                     <Button
+                        className="cart-modal-btn"
+                        type="primary"
+                        onClick={() => feedJSON5ToFirebase(dispatch)}
+                     >
+                        <span style={{ marginLeft: 12 }}>media</span>
+                     </Button>
+                  </div>
                )}
          </Card>
       </div>
