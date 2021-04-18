@@ -1,16 +1,16 @@
 import { Layout } from 'antd';
+import Logincontent from "../components/Logincontent"
 import Footer from "../components/BootomFooter"
 import NavBar from "../components/NavBar";
-import Feeder from "../components/Feeder";
 
-function Feed() {
+function Login() {
   return (
     <Layout className="container">
         <NavBar />
-        <Feeder />
+        <Logincontent/>
         <Footer/>  
     </Layout>
   );
 }
 
-export default Feed;
+export default Login;

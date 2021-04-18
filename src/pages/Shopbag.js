@@ -1,16 +1,17 @@
+
 import { Layout } from 'antd';
-import MemberProfile from "../components/MemberProfile"
+import MybagContent from "../components/MybagContent"
 import Footer from "../components/BootomFooter"
 import NavBar from "../components/NavBar";
 
-function Profile() {
+function Shopbag() {
    return (
         <Layout className="container">
             <NavBar />
-            <MemberProfile/>
+            <MybagContent/>
             <Footer/>  
         </Layout>
    );
 }
 
-export default Profile;
+export default Shopbag;

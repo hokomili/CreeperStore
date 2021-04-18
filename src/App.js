@@ -2,14 +2,14 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import PrivateRoute from '../src/components/PrivateRoute.js'
 import './App.css';
 import Home from './pages/Home'
+import Maps from './pages/Maps'
 import Product from './pages/Product'
-import ShoppingCart from './pages/ShoppingCart';
-import SignIn from './pages/SignIn';
-import SignOn from './pages/SignOn';
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import Shopbag from './pages/Shopbag'
 import FP from './pages/Forget-Password'
 import Feed from './pages/Feed'
 import Profile from './pages/Profile'
-
 import { StoreProvider } from "./store";
 import { AuthProvider } from './store/AuthContext.js';
 
@@ -21,12 +21,13 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <PrivateRoute exact path="/Profile" component={Profile} />
-          <Route exact path="/SignIn" component={SignIn} />
-          <Route exact path="/SignOn" component={SignOn} />
-          <Route exact path="/ShoppingCart" component={ShoppingCart} />
+          <Route exact path="/Maps" component={Maps} />
+          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Signup" component={Signup}/>
+          <Route exact path="/Shopbag" component={Shopbag} />
           <Route exact path="/Forget-Password" component={FP} />
           <Route exact path="/:pageName" component={Home} />
-          <Route exact path="/admin/feed-products" component={Feed} />
+          <PrivateRoute exact path="/admin/feed-products" component={Feed} />
           <Route exact path="/products/:category/:productId" component={Product} />
         </Switch>
       </BrowserRouter>
