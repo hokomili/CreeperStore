@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { StoreContext } from "../store";
 import { setPage } from "../actions";
-import { getJSON } from "../api";
 
 export default function NavItem(props) {
   const { children, to, className, activeClassName, onClose  } = props;

@@ -55,8 +55,7 @@ export default function Signup() {
         
     return (
         <Card>
-            {!loading && <Alert message={error} type="error"></Alert>}
-            {console.log(error)}
+            {!loading && <Alert message={error} type="error" />}
             
             <Form
                 {...layout}
