@@ -1,11 +1,14 @@
-import fb from '../images/fb-h.png';
-import ig from '../images/ig-h.png';
-import twr from '../images/twitter-h.png';
+import fb from '../images/pd-fb-ico.png';
+import ig from '../images/pd-ig-ico.png';
+import twr from '../images/pd-twr-ico.png';
 import flogo from '../images/foot-logo.png';
-export default function Footer() {
+export default function ProductFooter() {
     return (
-        <footer className="footer">
-            <div className="footer-social-area">
+        <footer className="pd-footer">
+            
+            <div className="pd-footer-between"></div>
+            
+            <div className="pd-footer-social-area">
                 <img src={fb} alt="fb" className="footer-social-icon"></img>
                 <img src={ig} alt="ig" className="footer-social-icon"></img>
                 <img src={twr} alt="twitter" className="footer-social-icon"></img>

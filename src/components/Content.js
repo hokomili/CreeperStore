@@ -1,18 +1,71 @@
-import { Row, Col } from "antd";
-import News from "../components/News"
-import Category from "../components/Category"
+import { Carousel } from 'antd';
+import c01 from '../images/co1.png';
+import c02 from '../images/co2.png';
+import c03 from '../images/co3.png';
+import c04 from '../images/co4.png';
+import logo from '../images/big-logo.png';
+import maps from '../images/maps.png';
+import packs from '../images/texurepacks.png';
+import mods from '../images/mods.png';
 
-export default function Content() {
+import { Link } from 'react-router-dom';
+
+const contentStyle = {
+    height: '411px',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
+  };
+
+export default function Content({title}) {
     return (
-        <div className="content">
-            <img style={{width:'100%'}} src="https://s3-alpha-sig.figma.com/img/40bd/ab4b/3152f5558106452e2227be7e95030ad5?Expires=1619395200&Signature=T1T8Y0BzQIP7HCR1OZazASz6rpMEL~~2B3IBiaowHO~KuEnIS0KAUfGjZhDEvV89Asu~nAKPsSZTG1Br~oTw-PoQRYntwd-f5xBv5L2dInsZBBFD1tFBSA7gGUkYryMxCTnte9TPoQSrxH-I2F9W~eFzp8dJ~olTBtDCv013lY~upGFR8gv1bA-D8t7S6NfBJqGO9dLRTsjq0KPhTpJAIcIFD2g71XE9tg6GuOA26bofurwMWqjbis6MoQaWVCCGKOCTOEuXgAjqYpXV9pUE20xz6NRW53RQ1gZpP~IpfUtI38pPXU-wGF13X8Dy4UXjg0IAIxFhl7Msqb5iMrNoEg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="" />
-            <Row className="container">
-                <News />
-            </Row>
-            <img style={{width:'100%'}} src="https://s3-alpha-sig.figma.com/img/b04b/7f4b/52d69a3bd56291b319f8f3df363c3c0e?Expires=1619395200&Signature=XD40Gj~DS08u8O0dl-hjARTipylNlJcioW-FVt9XrX7q1M3ERyeAfPlqkMDTIDTN9R8n3oX4Tvke8hUUFRJ0KkKYUslSnEFtJbO0paRfFWIHCFO~I3AWOPzrJRbYRzWuIB8RorNcpnHMmKSbdUlCIQoBx4cJUYoov1YhiDvLX4CpW-oryT3kdbWm7sgIGtsOi3r1UqPLtn9JqMDj5wI-clHH43LYI~7QhsfwsbpwUwxosEePq30dPeXBfm1eDWEZfpPFIJCjAacvwQ-Fjs2gndAyMn2-kk4XC3eqnDEtPGPr-KAdc1WH9ghFpwBGB4UUDb5OrV6Vm6PCPOaquRdERA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" alt="" />
-            <Row className="container">
-                <Category />
-            </Row>
-        </div>           
+       <div className="content">
+           <div className="content-news">
+               <div className="contentnews-title">NEWS</div>
+               <div className="contentnews-carousel">
+                    <Carousel autoplay>
+                        <div>
+                        <h3 style={contentStyle}><img src={c01} alt="c01" className="carousel-img"></img></h3>
+                        </div>
+                        <div>
+                        <h3 style={contentStyle}><img src={c02} alt="c02" className="carousel-img"></img></h3>
+                        </div>
+                        <div>
+                        <h3 style={contentStyle}><img src={c03} alt="c03" className="carousel-img"></img></h3>
+                        </div>
+                        <div>
+                        <h3 style={contentStyle}><img src={c04} alt="c04" className="carousel-img"></img></h3>
+                        </div>
+                    </Carousel>,
+               </div>
+           </div>
+           <div className="content-shop">
+               <div className="content-between"></div>
+               <div className="cshop-area">
+               <Link to="/Maps" className="nav-item" activeClassName="nav-item--active">
+                   <div className="cshop-box">
+                        <img src={maps} alt="maps" className="cshop-img "></img>
+                        <div className="cshop-masks"><div>MAPS</div></div>
+                   </div>
+                </Link>
+                   <div className="cshop-box">
+                       <img src={packs} alt="packs" className="cshop-img "></img>
+                       <div className="cshop-masks"><div >Texture Packs</div></div>
+                   </div>
+                   <div className="cshop-box">
+                        <img src={mods} alt="mods" className="cshop-img "></img>
+                        <div className="cshop-masks"><div>Mods</div></div>
+                   </div>
+                   
+               </div>
+            </div>
+            <div className="content-about">
+                    <img src={logo} alt="logo" className="content-about-logo"></img>
+                    <div className="content-about-buttom">
+                        <div className="content-about-buttom-text">About us</div>
+                    </div>
+            </div>
+       </div>
     );
-}
+ }

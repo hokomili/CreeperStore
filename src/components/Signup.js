@@ -1,12 +1,24 @@
 import { useState} from "react"
-import { Card,Button,Form,Input,Alert } from "antd"
+import { Button,Form,Input,Alert } from "antd"
 import {useAuth} from "../store/AuthContext"
 import { Link,useHistory } from "react-router-dom"
 
-
-
+const layout = {
+    labelCol: {
+      span: 8,
+    },
+    wrapperCol: {
+      span: 16,
+    },
+};
+const tailLayout = {
+wrapperCol: {
+    offset: 8,
+    span: 16,
+},
+};
 export default function Signup() {
-    const {signup,googleauth} = useAuth()
+    const {signup} = useAuth()
     const [ error ,setError] = useState("")
     const [ loading ,setLoading] = useState(false)
     const history=useHistory()
@@ -28,95 +40,84 @@ export default function Signup() {
         }
         setLoading(false)
     }
-    async function google(){
-        try{
-        setLoading(true)
-        await googleauth()
-        history.push("/Profile")
-        }catch{
-            setError('Failed to google')
-        }
-        setLoading(false)
-    }
-    const layout = {
-        labelCol: {
-          span: 8,
-        },
-        wrapperCol: {
-          span: 16,
-        },
-      };
-      const tailLayout = {
-        wrapperCol: {
-          offset: 8,
-          span: 16,
-        },
-      };
-        
     return (
-        <Card>
-            {!loading && <Alert message={error} type="error" />}
-            
-            <Form
-                {...layout}
-                name="basic"
-                initialValues={{ remember: true }}
-                onFinish={registration}
-                >
-                <Form.Item
-                    label="Email"
-                    name="email"
-                    rules={[{ required: true, message: 'Please input your Email!' }]}
-                >
-                    <Input />
-                </Form.Item>
+        <div className="login-block">
+            <div className="login-bg"></div> 
+            <div className="login-from">
+                
+                <div className="login-from-bg">
+                    <Form
+                        {...layout}
+                        name="basic"
+                        initialValues={{ remember: true }}
+                        onFinish={registration}
+                    >
+                        <div className="signup-title">Register Account</div>
+                        {!loading && <Alert message={error} type="error" />}
+                        <Form.Item
+                            label="Email"
+                            name="email"
+                            rules={[
+                            {
+                                required: true,
+                                message: 'Please input your email!',
+                            },
+                            ]}
+                        >
+                            <Input allowClear/>
+                        </Form.Item>
+                        <Form.Item
+                            label="Password"
+                            name="password"
+                            rules={[
+                            {
+                                required: true,
+                                message: 'Please input your password!',
+                            },
+                            ]}
+                        >
+                            <Input.Password />
+                        </Form.Item>
+                        <Form.Item
+                            className="signup-pwd"
+                            label="Confirm Password"
+                            name="confirm"
+                            dependencies={['password']}
+                            rules={[
+                            {
+                                required: true,
+                                message: 'Please confirm your password!',
+                            },({ getFieldValue }) => ({
+                                validator(_, value) {
+                                if (!value || getFieldValue('password') === value) {
+                                    return Promise.resolve();
+                                }
+                                return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                                },
+                            }),
+                            ]}
+                        >
+                            <Input.Password />
+                        </Form.Item>
+                        <Form.Item {...tailLayout} >
+                            <Button disabled={loading} type="primary" htmlType="submit" className="login-btn signup-btn" >
+                            <div className="login-login-text">Sign Up</div>
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                    <div className="signup-bottom">
+                        <div className="signup-text">
+                            Already have account ?
+                        </div>
+                        <Link to="/Login" className="signup-text sigup-login-link">
+                            Log in
+                        </Link>
+                        
+                    </div>
 
-                <Form.Item
-                    label="Password"
-                    name="password"
-                    hasFeedback
-                    rules={[{ required: true, message: 'Please input your password!' }]}
-                >
-                    <Input.Password />
-                </Form.Item>
-
-                <Form.Item
-                    name="confirm"
-                    label="Confirm Password"
-                    dependencies={['password']}
-                    hasFeedback
-                    rules={[
-                    {
-                        required: true,
-                        message: 'Please confirm your password!',
-                    },
-                    ({ getFieldValue }) => ({
-                        validator(_, value) {
-                        if (!value || getFieldValue('password') === value) {
-                            return Promise.resolve();
-                        }
-
-                        return Promise.reject(new Error('The two passwords that you entered do not match!'));
-                        },
-                    }),
-                    ]}
-                >
-                    <Input.Password />
-                </Form.Item>
-
-                <Form.Item {...tailLayout}>
-                    <Button disabled={loading} type="primary" htmlType="submit">
-                        Submit
-                    </Button>
-                </Form.Item>
-            </Form>
-            <Button className="googleauth" onClick={google}>
-                Sign in with google
-            </Button>
-            <div>
-                Already have an account?
+                </div>
+                
             </div>
-            <Link to="/SignIn">Log In</Link>
-        </Card>
+        </div>
     );
   }

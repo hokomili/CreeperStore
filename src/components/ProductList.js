@@ -17,12 +17,12 @@ export default function ProductList() {
             <Spin indicator={antIcon} className="spinner" />
           </div>
         ) : (
-          <Row gutter={[32, 32]}>
+          <Row gutter={[0, 32]}>
             {products.map(product => (
               <Col
                 key={product.id}
-                md={{ span: 12 }}
-                xxl={{ span: 8 }}
+                xl={{ span: 8 }}
+                className="pd-block-outside"
               >
                 <ProductItem product={product} />
               </Col>

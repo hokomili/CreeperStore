@@ -1,15 +1,25 @@
 import { useState} from "react"
-import { Card,Button,Form,Input,Alert } from "antd"
-import { Link,useHistory } from "react-router-dom";
+import { Button,Form,Input,Alert } from "antd"
+import { Link } from "react-router-dom";
 import {useAuth} from "../store/AuthContext"
-
+const layout = {
+  labelCol: {
+    span: 8,
+  },
+  wrapperCol: {
+    span: 16,
+  },
+};
+const tailLayout = {
+  wrapperCol: {
+    offset: 8,
+    span: 16,
+  },
+};
 export default function Forget() {
-    const {forget,googleauth} = useAuth()
+    const [forget] =useAuth()
     const [ error ,setError] = useState("")
-    const [ loading ,setLoading] = useState(false)
-    const history =useHistory()
-
-
+    const [ loading,setLoading] = useState(false)
     async function sendemail(value){
         try{
             setError('')
@@ -21,66 +31,51 @@ export default function Forget() {
         }
         setLoading(false)
     }
-    async function google(){
-        try{
-        setLoading(true)
-        await googleauth()
-        history.push("/Profile")
-        }catch{
-            setError('Failed to google')
-        }
-        setLoading(false)
-    }
-
-    const layout = {
-        labelCol: {
-          span: 8,
-        },
-        wrapperCol: {
-          span: 16,
-        },
-      };
-      const tailLayout = {
-        wrapperCol: {
-          offset: 8,
-          span: 16,
-        },
-      };
     return (
-      <Card>
+      <div className="login-block">
+        <div className="login-bg"></div> 
+        <div className="login-from">
           {error && <Alert message={error} type="error" />}
-        <Form
+          <div className="login-from-bg">
+          <div className=" fgt-title">Forget Password</div>
+          <Form
             {...layout}
             name="basic"
             initialValues={{ remember: true }}
             onFinish={sendemail}
-            >
-            <Form.Item
-                label="Email"
-                name="email"
-                hasFeedback
-                rules={[{ required: true, message: 'Please input your Email!' }]}
-            >
-                <Input />
-            </Form.Item>
+          >
 
-            <Form.Item {...tailLayout}>
-                <Button disabled={loading} type="primary" htmlType="submit">
-                    Submit
-                </Button>
+            <Form.Item
+              label="Email"
+              name="email"
+              rules={[
+              {
+                required: true,
+                message: 'Please input your email!',
+              },
+              ]}
+            >
+              <Input allowClear/>
             </Form.Item>
-        </Form>
-        <Button className="googleauth" onClick={google}>
-              Sign in with google
-        </Button>
-        <div>
-            Back to Login
+                    
+            <Form.Item {...tailLayout} >
+              <Button type="primary" htmlType="submit" className="login-btn  foget-btn" >
+              <div className="login-login-text">Send</div>
+              </Button>
+            </Form.Item>
+          </Form>
+          <div className="  fgt-botm">
+            <div className="signup-text">
+                Already have account ?
+            </div>
+            <Link to="/Login" className="signup-text sigup-login-link">
+                Log in
+            </Link>
+          </div>
+
         </div>
-        <Link to="/SignIn">Login</Link>
-        <div>
-            Don't have an account?
-        </div>
-        <Link to="/SignOn">Sign Up</Link>
-      </Card>
-    );
+                
+      </div>
+    </div>
+  );
 }
