@@ -17,8 +17,13 @@ export default function Signup() {
             setError('')
             setLoading(true)
             await signup(value.email,value.password)
+            
+            
             history.push("/Profile")
         }catch{
+            value.password.length<8?
+            setError('password need at least 8 character') 
+            :
             setError('Failed to create an account')
         }
         setLoading(false)
@@ -50,7 +55,9 @@ export default function Signup() {
         
     return (
         <Card>
-            {error && <Alert variant="danger">{error}</Alert>}
+            {!loading && <p>{error}</p>}
+            {console.log(error)}
+            
             <Form
                 {...layout}
                 name="basic"
