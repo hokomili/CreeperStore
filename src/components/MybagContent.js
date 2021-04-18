@@ -39,7 +39,7 @@ export default function MybagContent() {
                                  <div className="cart-image" onClick={()=>{
                                     setProductDetail(dispatch, item.id, item.qty);
                                  }}>
-                                    <img src={item.image} alt={item.name} />
+                                    <img src={item.image} alt={item.name}  className="item-image"/>
                                  </div>
                               </Link>
                               <div className="cart-item-content">

@@ -303,6 +303,9 @@ height: 411px;
   margin-top: 40px;
   margin-bottom: 110px;
 }
+.rwd-newimg{
+display: none;
+}
 .content-between{
   background: url(./images/between.png);
   background-repeat:repeat;
@@ -1095,6 +1098,15 @@ margin-right: auto;
   height: 90px;
   background: #303E47;
 }
+.cart-image{
+
+}
+.item-image{
+  width: 120px;
+  height: 118px;
+}
+
+/* ------------------------------------------------------------------- */
 
 @media (max-width: 481px) {
   /* .container {
