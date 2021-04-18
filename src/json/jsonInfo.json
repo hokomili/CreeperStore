@@ -15,6 +15,26 @@
       "url": "/Maps"
    },
    {
+      "title": "Maps",
+      "name": "Trending",
+      "url": "/Maps/Trending"
+   },
+   {
+      "title": "Maps",
+      "name": "Views",
+      "url": "/Maps/Views"
+   },
+   {
+      "title": "Maps",
+      "name": "Trending",
+      "url": "/Maps/Downloads"
+   },
+   {
+      "title": "Maps",
+      "name": "Latest",
+      "url": "/Maps/Lastest"
+   },
+   {
       "title": "Cookware",
       "name": "Cookware",
       "url": "/cookware"

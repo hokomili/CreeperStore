@@ -8,7 +8,7 @@ import {useContext,useEffect} from "react"
 import { StoreContext } from "../store";
 import { setPage } from "../actions";
 import {getTitle} from "../utils"
-function Maps() {
+function Category() {
   const { state: { page: { title } }, dispatch } = useContext(StoreContext);
 
     useEffect(() => {
@@ -26,4 +26,4 @@ function Maps() {
   );
 }
 
-export default Maps;
+export default Category;

@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import PrivateRoute from '../src/components/PrivateRoute.js'
 import './App.css';
 import Home from './pages/Home'
-import Maps from './pages/Maps'
+import Category from './pages/Category'
 import Product from './pages/Product'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
@@ -21,7 +21,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <PrivateRoute exact path="/Profile" component={Profile} />
-          <Route exact path="/Maps" component={Maps} />
+          <Route exact path="/Maps" component={Category} />
+          <Route exact path="/Maps/:category" component={Category} />
+          <Route exact path="/Mods" component={Category} />
+          <Route exact path="/Mods/:category" component={Category} />
+          <Route exact path="/Textures" component={Category} />
+          <Route exact path="/Textures/:category" component={Category} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup}/>
           <Route exact path="/Shopbag" component={Shopbag} />

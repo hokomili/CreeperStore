@@ -49,14 +49,18 @@ export default function Content({title}) {
                         <div className="cshop-masks"><div>MAPS</div></div>
                    </div>
                 </Link>
+                <Link to="/Textures" className="nav-item" activeClassName="nav-item--active">
                    <div className="cshop-box">
                        <img src={packs} alt="packs" className="cshop-img "></img>
                        <div className="cshop-masks"><div >Texture Packs</div></div>
                    </div>
+                </Link>
+                <Link to="/Mods" className="nav-item" activeClassName="nav-item--active">
                    <div className="cshop-box">
                         <img src={mods} alt="mods" className="cshop-img "></img>
                         <div className="cshop-masks"><div>Mods</div></div>
                    </div>
+                </Link>
                    
                </div>
             </div>
