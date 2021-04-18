@@ -113,10 +113,7 @@ function ProductDetail() {
                               <img src={Bfavor} alt="" className="pddel-favor-bottom"/>                            
                            </div>
                         </div>
-                        <div className="pddel-text-bottom">
-                           <h1>ADD TO BAG</h1>
-                           <AddToCart />
-                        </div>
+                        <AddToCart />
                      </div>
                   </div>
                </div>

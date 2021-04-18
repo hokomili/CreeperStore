@@ -87,11 +87,11 @@ export default function LoginContent() {
                                     ]}
                                 >
                                     <Input.Password />
-                                    <Link to='/Forget-Password' className="login-form-forgot" >
-                                        Forgot password?
-                                    </Link>
+                                    
                                 </Form.Item>
-                            
+                                <Link to='/Forget-Password' className="login-form-forgot" >
+                                    Forgot password?
+                                </Link>
                                 <Form.Item {...tailLayout} name="remember" valuePropName="checked" className="from-block">
                                     <div><Checkbox>Remember me</Checkbox></div>
                                 </Form.Item>
@@ -109,8 +109,8 @@ export default function LoginContent() {
                         <div className="btw-text"><div className="btw-line"></div></div>
                         <div className="login-from-r">
                             <div className="login-google-bottom  ">
-                                    <Link to='/Member' className="login-google-text">Sign in with Google</Link>
-                                    <img onClick={googlelog} src={google} alt="" className="google-ico"/>
+                                    <Link onClick={googlelog} to='/Profile' className="login-google-text">Sign in with Google</Link>
+                                    <img  src={google} alt="" className="google-ico"/>
                             </div>
                             <div className="or-text">OR</div>
                             <div className="login-sign-bottom ">

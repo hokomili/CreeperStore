@@ -2,7 +2,7 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import jsonInfo from "../json/jsonInfo.json";
-import products from "../json/products.json";
+import products from "../json/maps-item.json";
 
 // Initialize the FirebaseUI Widget using Firebase.
 
@@ -24,6 +24,10 @@ export const GoogleProvider= new firebase.auth.GoogleAuthProvider();
 const productsCollectionRef = firebase.firestore().collection("products");
 const productsDocRef = productsCollectionRef.doc("json");
 const allProductsCollectionRef = productsDocRef.collection("allProducts");
+const mapsCollectionRef = productsDocRef.collection("maps");
+const textureCollectionRef = productsDocRef.collection("textures");
+const modsCollectionRef = productsDocRef.collection("mods");
+const mediaCollectionRef = productsDocRef.collection("medias");
 
 export const getProductById = async (productId) => {
   // REFERENCE PRODUCTS COLLECTION
@@ -51,6 +55,50 @@ export const getProducts = async (url) => {
 export const feedProducts = () => {
   products.forEach((product) => {
     const docRef = allProductsCollectionRef.doc();
+    const id = docRef.id;
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...product,
+      id
+    });
+  })
+}
+export const feedmedias = () => {
+  products.forEach((product) => {
+    const docRef = mediaCollectionRef.doc();
+    const id = docRef.id;
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...product,
+      id
+    });
+  })
+}
+export const feedmods = () => {
+  products.forEach((product) => {
+    const docRef = modsCollectionRef.doc();
+    const id = docRef.id;
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...product,
+      id
+    });
+  })
+}
+export const feedtextures = () => {
+  products.forEach((product) => {
+    const docRef = textureCollectionRef.doc();
+    const id = docRef.id;
+    // Store Data for Aggregation Queries
+    docRef.set({
+      ...product,
+      id
+    });
+  })
+}
+export const feedmaps = () => {
+  products.forEach((product) => {
+    const docRef = mapsCollectionRef.doc();
     const id = docRef.id;
     // Store Data for Aggregation Queries
     docRef.set({

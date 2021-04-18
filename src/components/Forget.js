@@ -17,7 +17,7 @@ const tailLayout = {
   },
 };
 export default function Forget() {
-    const [forget] =useAuth()
+    const forget =useAuth()
     const [ error ,setError] = useState("")
     const [ loading,setLoading] = useState(false)
     async function sendemail(value){

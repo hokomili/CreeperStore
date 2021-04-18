@@ -3,7 +3,6 @@ import Logout from "../images/log-out.png"
 import { useState }from "react"
 import { useHistory } from "react-router-dom"
 import { useAuth } from "../store/AuthContext";
-import { Alert } from "antd"
 
 
 export default function MemberProfile(){
@@ -30,7 +29,6 @@ export default function MemberProfile(){
                         
                     </div>
                     <div className="member-nav">
-                        <Alert message={error} type="error" />
                         <img onClick={signout} src={ Logout} alt="" className="logout-img"></img>
                     </div>
                 </div>

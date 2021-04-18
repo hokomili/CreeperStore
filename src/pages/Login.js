@@ -1,5 +1,5 @@
 import { Layout } from 'antd';
-import Logincontent from "../components/Logincontent"
+import Logincontent from "../components/LoginContent"
 import Footer from "../components/BootomFooter"
 import NavBar from "../components/NavBar";
 

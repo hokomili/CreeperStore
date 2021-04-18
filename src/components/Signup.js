@@ -53,7 +53,7 @@ export default function Signup() {
                         onFinish={registration}
                     >
                         <div className="signup-title">Register Account</div>
-                        {!loading && <Alert message={error} type="error" />}
+                        {error && <Alert message={error} type="error" />}
                         <Form.Item
                             label="Email"
                             name="email"
