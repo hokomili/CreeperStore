@@ -1,13 +1,18 @@
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import { Row, Col, Spin } from "antd";
 import { LoadingOutlined } from '@ant-design/icons';
-
 import ProductItem from "./ProductItem";
 import { StoreContext } from "../store";
-
+import { setPage } from "../actions";
+import {getTitle} from "../utils"
 export default function ProductList() {
-  const { state: { page: { products }, requestProducts: { loading } } } = useContext(StoreContext);
+  const { state: { page: { products }, requestProducts: { loading } },dispatch } = useContext(StoreContext);
   const antIcon = <LoadingOutlined style={{ fontSize: 80, color: "#8183ff" }} spin />;
+
+    useEffect(() => {
+      const url = window.location.pathname;
+      setPage(dispatch, url, getTitle(url))
+    }, []);
 
   return (
     <>
