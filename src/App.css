@@ -2,20 +2,26 @@
 
 @font-face {font-family: "Berlin Sans FB Demi"; src: url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.eot"); src: url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.woff") format("woff"), url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/b6539b6d3432c623d8d4f9cc2a29589e.svg#Berlin Sans FB Demi") format("svg"); }
 /* RWD Container */
-.container {
-    width: 100vw;
 
-}
+
+
+
 
 
 
 /* general */
- body {
-  font-size: 16px;
-  line-height: 1.6;
-  background-color: #9eaac7;
+html{
   overflow-x: hidden;
-  font-family: sans-serif;
+}
+ body {
+
+  background-color: #9eaac7;
+  /* overflow-x: hidden; */
+  
+
+}
+.container {
+  width: 100vw;
 
 }
 
@@ -177,6 +183,9 @@
   
   margin-right: 7px;
 }
+.navbar-rwd-logo{
+  display: none;
+}
 .navbar-icon{
   width: 48px;
   height: 48px;
@@ -293,6 +302,9 @@ height: 411px;
   align-self:center;
   margin-top: 40px;
   margin-bottom: 110px;
+}
+.rwd-newimg{
+display: none;
 }
 .content-between{
   background: url(./images/between.png);
@@ -1086,26 +1098,168 @@ margin-right: auto;
   height: 90px;
   background: #303E47;
 }
+.cart-image{
+
+}
+.item-image{
+  width: 120px;
+  height: 118px;
+}
+
+/* ------------------------------------------------------------------- */
 
 @media (max-width: 481px) {
+  /* .container {
+    width: 480px;
 
+  } */
   .nav-bar{
-
+    display: flex;
     position: fixed;
-    width: 100vw;
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 109px;
+    
 
   }
 
   .navbar-r{
 
-    margin-right: 50px;
+    
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    margin: 0;
+    
+
   }
   .navbar-l{
 
-    margin-left: 50px;
+   margin: 0;
+   margin-top: 10px;
   }
   .navbar-logo{
-    width: 79px;
-    height: 25px;
+
+    display:none ;
+
+  }
+  .navbar-search{
+    width: 401px;
+height: 33px;
+  }
+  .navbar-rwd-logo{
+    display: block;
+    width: 117px;
+    height: 40px;
+    margin-right: 200px;
+    
+
+  }
+  .navbar-icon{
+    width: 38px;
+    height: 38px;
+    margin: 0;
+  }
+  /* --------------------------------------- */
+  .header-bg{
+    
+    height: 400px;
+    
+
+  }
+  
+  .header-box{
+
+    height: 400px;
+
+    top: 50px;
+  }
+  .header-text{
+
+    font-size: 36px;
+    line-height: 40px;
+
+  }
+  /* ---------------------------------- */
+  .content-news{
+    height: 380px;
+    }
+  .contentnews-title{
+    margin-top: 30px;
+
+      font-size: 48px;
+    }
+  .rwd-newimg{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+  }
+  .ant-carousel{
+    display: none;
+  }
+  .carousel-img{
+    display: none;
+  
+  }
+  .contentnews-carousel{
+    display: none;
+  }
+  .content-between{
+    height: 56px;
+  
+  }
+  .content-shop{
+    height: 1260px;
+  }
+  .cshop-area{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+  
+  }
+  .cshop-box{
+    position: relative;
+    margin: 0;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    
+  }
+
+  
+  .cshop-masks{
+
+    opacity: 1;
+  
+  }
+
+  
+  .content-about{
+    height: 332px;
+    background: #303E47;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+  }
+  
+  .content-about-logo{
+    width: 290px;
+    height: 87px;
+  }
+  /* -------------------------------------- */
+  .footer-social-area{
+    height: 151px;
+
+  }
+
+  .footer-foot-logo{
+    width: 50px;
+    height: 40px;
+    
   }
 } 

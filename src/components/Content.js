@@ -11,11 +11,13 @@ import mods from '../images/mods.png';
 import { Link } from 'react-router-dom';
 
 const contentStyle = {
+    
     height: '411px',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
     background: '#364d79',
+
   };
 
 export default function Content({title}) {
@@ -23,6 +25,7 @@ export default function Content({title}) {
        <div className="content">
            <div className="content-news">
                <div className="contentnews-title">NEWS</div>
+               <img src={c01}className="rwd-newimg"></img>
                <div className="contentnews-carousel">
                     <Carousel autoplay>
                         <div>
