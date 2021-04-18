@@ -39,7 +39,6 @@ export const getProducts = async (url) => {
   const collection = jsonInfo.find(element => element.url === url);
   const collectionName = collection.name || "allProducts";
   let jsonProducts = [];
-
   // QUERY PRODUCTS
   let querySnapshot;
   if (collectionName === "allProducts")

@@ -8,7 +8,7 @@ import PdFooter from "../components/ProductFooter"
 import NavBar from "../components/NavBar";
 
 function Product({ match }) {
-   const { dispatch } = useContext(StoreContext);   
+   const { dispatch } = useContext(StoreContext);  
    useEffect(() => setProductDetail(dispatch, match.params.productId, 0, match.params.category),[])
    return (
       <Layout className="container">

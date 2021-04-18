@@ -10,6 +10,11 @@
       "url": "/Profile"
    },
    {
+      "title": "Maps",
+      "name": "allProducts",
+      "url": "/Maps"
+   },
+   {
       "title": "Cookware",
       "name": "Cookware",
       "url": "/cookware"
