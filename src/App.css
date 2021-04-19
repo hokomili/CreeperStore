@@ -20,6 +20,9 @@ html{
   
 
 }
+.ant-layout{
+  width: 100vw;
+}
 .container {
   width: 100vw;
 
@@ -61,7 +64,8 @@ html{
   background-size: cover;
   padding: 0;
   filter: blur(2.5px);
-  transform: scale(1.02)
+  transform: scale(1.02);
+  
 }
 
 .header-box{
@@ -127,7 +131,7 @@ html{
   display: flex;
   background: #1F2240;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   justify-content:space-between;
   align-items:center;
   z-index: 20;
@@ -1145,12 +1149,26 @@ margin-right: auto;
   justify-content: center;
   align-items: center;
 }
+
+.bagempty-text{
+  font-size: 50px;
+}
+.delete{
+  height: 40px;
+  width: 40px;
+}
+
 .mybag-content-item-iner{
   
 }
 
 /* ------------------------------------------------------------------- */
+/* @media (max-width: 961px){
+  .contentnews-carousel{
+    display: none;
+  }
 
+} */
 @media (max-width: 481px) {
   /* .container {
     width: 480px;
@@ -1306,4 +1324,6 @@ height: 33px;
     height: 40px;
     
   }
+
+  /* ------------------product------------------- */
 } 
