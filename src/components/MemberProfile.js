@@ -7,13 +7,13 @@ import { useAuth } from "../store/AuthContext";
 
 export default function MemberProfile(){
     const [ error ,setError] = useState("")
-    const { logout,Name} =useAuth()
+    const { logout,Name,isadmin} =useAuth()
     const history=useHistory()
     async function signout(){
         setError('')
         try{
             await logout()
-            history.push("/signin")
+            history.push("/Login")
         }catch{
             setError('Failed to logout')
         }
@@ -29,6 +29,7 @@ export default function MemberProfile(){
                         
                     </div>
                     <div className="member-nav">
+                        {isadmin(Name) &&<img onClick={() =>{history.push("/admin/feed-products")}} src={ Logout} alt="" className="logout-img"></img>}
                         <img onClick={signout} src={ Logout} alt="" className="logout-img"></img>
                     </div>
                 </div>

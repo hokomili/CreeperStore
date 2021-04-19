@@ -5,11 +5,11 @@ import "firebase/firestore";
 const AuthContext=React.createContext()
 
 const UserCollectionRef = firebase.firestore().collection("users");
+const adminCollectionRef= firebase.firestore().collection("admins")
 const userDocRef = UserCollectionRef.doc("json");
 export function useAuth(){
     return useContext(AuthContext)
 }
-
 export function AuthProvider({children}){
     const [currentUser,setCurrentUser]=useState()
     const [loading,setLoading]=useState(true)
@@ -30,6 +30,17 @@ export function AuthProvider({children}){
     }
     function forget(email){
         return auth.sendPasswordResetEmail(email)
+    }
+    async function isadmin(Name){
+        let adminlist=await adminCollectionRef.get()
+        if(!adminlist){
+            return false
+        }
+        adminlist.forEach(element => {
+            if(element===Name)
+                return true
+        });
+        return false
     }
     async function likestate(productid){
         /*if(currentUser){
@@ -73,6 +84,7 @@ export function AuthProvider({children}){
         googleauth,
         logout,
         forget,
+        isadmin,
     }
     return(
         <AuthContext.Provider value={value}>
