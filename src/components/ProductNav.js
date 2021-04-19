@@ -20,7 +20,6 @@ export default function ProductNav() {
         history.push('../'+category+to)
         setLoading(false)
         history.go(0)
-        
     }
     return (
 
@@ -28,30 +27,30 @@ export default function ProductNav() {
         <div className="pnav-bar">
             
             <div className="pnav-search">
-                <div onClick={()=>clicking('')} style={{cursor:"Pointer"}} className="pnav-search-block" activeClassName="pnav-search-block--active">
+                <div onClick={()=>clicking('')} style={{cursor:"Pointer"}} className="pnav-search-block">
                     <img src={All} alt="All" className="pnav-search-img"></img>
                     <div className="pnav-search-text">ALL</div>
-                    <div className="pnav--inactive"></div>
+                    <div className={"pnav--inactive "+((url.slice(-4)==="Maps"||url.slice(-8)==="Textures"||url.slice(-4)==="Mods")?"pnav-search-block--active":"")}></div>
                 </div>
-                <div onClick={()=>clicking('/Trending')} style={{cursor:"Pointer"}} className="pnav-search-block" activeClassName="pnav-search-block--active">
+                <div onClick={()=>clicking('/Trending')} style={{cursor:"Pointer"}} className="pnav-search-block">
                     <img src={Trending} alt="Trending" className="pnav-search-img  f01"></img>
                     <div className="pnav-search-text">TRENDING</div>
-                    <div className="pnav--inactive"></div>
+                    <div className={"pnav--inactive "+((url.slice(-8)==="Trending")?"pnav-search-block--active":"")}></div>
                 </div>
-                <div onClick={()=>clicking('/Latest')} style={{cursor:"Pointer"}} className="pnav-search-block" activeClassName="pnav-search-block--active">
+                <div onClick={()=>clicking('/Latest')} style={{cursor:"Pointer"}} className="pnav-search-block ">
                     <img src={Latest} alt="Latest" className="pnav-search-img f02"></img>
                     <div className="pnav-search-text">LATEST</div>
-                    <div className="pnav--inactive"></div>
+                    <div className={"pnav--inactive "+((url.slice(-6)==="Latest")?"pnav-search-block--active":"")}></div>
                 </div>
-                <div onClick={()=>clicking('/Views')} style={{cursor:"Pointer"}} className="pnav-search-block" activeClassName="pnav-search-block--active">
+                <div onClick={()=>clicking('/Views')} style={{cursor:"Pointer"}} className="pnav-search-block ">
                     <img src={View} alt="View" className="pnav-search-img"></img>
                     <div className="pnav-search-text">VIEWS</div>
-                    <div className="pnav--inactive"></div>
+                    <div className={"pnav--inactive "+((url.slice(-5)==="Views")?"pnav-search-block--active":"")}></div>
                 </div>
-                <div onClick={()=>clicking('/Downloads')} style={{cursor:"Pointer"}} className="pnav-search-block" activeClassName="pnav-search-block--active">
+                <div onClick={()=>clicking('/Downloads')} style={{cursor:"Pointer"}} className="pnav-search-block ">
                     <img src={Download} alt="Download" className="pnav-search-img"></img>
                     <div className="pnav-search-text">DOWNLOADS</div>
-                    <div className="pnav--inactive"></div>
+                    <div className={"pnav--inactive "+((url.slice(-9)==="Downloads")?"pnav-search-block--active":"")}></div>
                 </div>
             </div>
             <Collapse accordion className="rwd-pnav">

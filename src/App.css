@@ -260,7 +260,12 @@ display: none;
   opacity: 0;
   background: #1F2240;
 }
-.pnav-search-block--active .pnav--inactive{
+.pnav-search-block--active{
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  bottom: 0;
+  background: #1F2240;
   opacity: 1;
 }
 
