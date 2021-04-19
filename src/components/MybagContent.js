@@ -11,7 +11,7 @@ import Item from "antd/lib/list/Item";
 const { Option } = Select;
 
 export default function MybagContent() {
-   const { state: { cartItems }, dispatch } = useContext(StoreContext);
+   const { state: { cartItems,ver,edi }, dispatch } = useContext(StoreContext);
    async function download(){
       console.log("notdone")
    }
@@ -40,27 +40,41 @@ export default function MybagContent() {
                            <div key={item.id} className="cart-item">
                               <div><Link to={`/products/${item.category}/${item.id}`}>
                                  <div className="cart-image" onClick={()=>{
-                                    setProductDetail(dispatch, item.id, item.version);
+                                    setProductDetail(dispatch, item.id, item.version,item.edition);
                                  }}>
-                                    <img src={item.image} alt={item.name}  className="item-image"/>
+                                    <img src={item.image} alt={item.image_info}  className="item-image"/>
                                  </div>
                               </Link></div>
                               <div className="cart-item-content">
-                                 <div className="cart-name cart-mr">{item.name}</div>
+                                 <div className="cart-name cart-mr">{item.title}</div>
                                  <div className="product-qty">
                                     Version: {"   "}
+                                    {item.version?
                                     <Select
-                                       defaultValue={item.version}
-                                       value={item.version}
+                                       defaultValue={item.version[ver]}
+                                       value={ver}
                                        className="select-style"
-                                       onChange={(version) => addCartItem(dispatch, item, version)}
+                                       onChange={(vers) => addCartItem(dispatch, item, vers,edi)}
                                     >
-                                       {[...Array(item.countInStock).keys()].map((x) => (
+                                       {[...Array(item.version.length).keys()].map((x) => (
                                           <Option key={x} value={x}>
-                                             {Item.version?Item.version[x]:0}
+                                             {item.version[x]}
                                           </Option>
                                        ))}
-                                    </Select>
+                                    </Select>:0}
+                                    {item.edition?
+                                    <Select
+                                       defaultValue={item.edition[edi]}
+                                       value={edi}
+                                       className="select-style"
+                                       onChange={(edit) => addCartItem(dispatch, item ,ver, edit)}
+                                    >
+                                       {[...Array(item.edition.length).keys()].map((x) => (
+                                          <Option key={x} value={x}>
+                                             {item.edition[x]}
+                                          </Option>
+                                       ))}
+                                    </Select>:0}
                                  </div>
                               </div>
                               <div className="cart-item-end">

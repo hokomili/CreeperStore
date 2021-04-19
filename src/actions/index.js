@@ -22,8 +22,10 @@ export const addCartItem = (dispatch, product, ver,edi) => {
     title: product.title,
     image: product.image,
     category2: product.category2,
-    version: ver,
-    edition: edi,
+    version: product.version,
+    edition: product.edition,
+    ver:ver,
+    edi:edi,
   };
   dispatch({
     type: ADD_CART_ITEM,

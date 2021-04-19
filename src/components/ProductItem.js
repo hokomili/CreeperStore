@@ -26,7 +26,7 @@ export default function ProductItem({ product }) {
         <div className="pd-block">
             <Link to={`/products/${product.category}/${product.id}`} 
                 onClick={()=>{
-                setProductDetail(dispatch, product.id, 1);
+                setProductDetail(dispatch, product.id, 0,0);
                 }}
             >
                 <img src={product.image} alt={product.image_info} className="pd-img"/>
