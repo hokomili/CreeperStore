@@ -2,10 +2,15 @@ import { useContext } from "react";
 import { Card, Button } from "antd";
 import { feedJSONToFirebase,feedJSON2ToFirebase,feedJSON3ToFirebase,feedJSON4ToFirebase,feedJSON5ToFirebase } from "../actions"
 import { StoreContext } from "../store";
+import { useHistory } from "react-router";
 
 export default function Feeder() {
    const { state: { feedProducts: { loading } }, dispatch } = useContext(StoreContext);
-
+   const history=useHistory()
+   function feedjs(){
+      const feeder1=feedJSONToFirebase(dispatch)
+      history.go(0)
+   }
    return (
 
       <div className="feed">
@@ -18,7 +23,6 @@ export default function Feeder() {
                   <Button
                      className="cart-modal-btn"
                      type="primary"
-                     onClick={() => feedJSONToFirebase(dispatch)}
                      loading
                   >
                      <span style={{ marginLeft: 12 }}>Feed</span>
@@ -28,7 +32,7 @@ export default function Feeder() {
                      <Button
                         className="cart-modal-btn"
                         type="primary"
-                        onClick={() => feedJSONToFirebase(dispatch)}
+                        onClick={() => {feedjs()}}
                      >
                         <span style={{ marginLeft: 12 }}>Feed</span>
                      </Button>

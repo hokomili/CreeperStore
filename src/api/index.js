@@ -3,7 +3,6 @@ import "firebase/firestore";
 import "firebase/auth";
 import jsonInfo from "../json/jsonInfo.json";
 import products from "../json/products.json";
-
 // Initialize the FirebaseUI Widget using Firebase.
 
 const firebaseConfig = {
@@ -118,6 +117,9 @@ export const feedMaps = () => {
       id
     });
   })
+}
+export const delet=async(product)=>{
+  await allProductsCollectionRef.doc(product.id).delete()
 }
 export const handleUserProfile=async(userAuth,otherdata)=>{
   if(!userAuth)return;

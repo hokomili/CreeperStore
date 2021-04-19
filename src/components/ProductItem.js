@@ -1,5 +1,5 @@
 import { useState,useContext } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { StoreContext } from "../store"
 import { setProductDetail } from "../actions";
 import down from '../images/small-download-ico.png';
@@ -9,6 +9,7 @@ import view from '../images/small-view-ico.png';
 import cross from '../images/small-cross-ico.png'
 import PrivateRoute from "./PrivateRoute";
 import {useAuth} from "../store/AuthContext"
+import {delet} from "../api"
 
     
 export default function ProductItem({ product }) {
@@ -16,11 +17,15 @@ export default function ProductItem({ product }) {
     const url=window.location.pathname;
     const {liked,setlike}=useState(likestate(product.id));
     const { dispatch } = useContext(StoreContext);
+    const history=useHistory()
     function dolike(){
         if(!liked){
             setlike(true)
-    
         }
+    }
+    async function del(produc){
+        const result=await delet(produc)
+        history.go(0)
     }
     return (
         <div className="pd-block">
@@ -53,7 +58,7 @@ export default function ProductItem({ product }) {
                     </div>
                     {url==="/Admin"&&
                         <PrivateRoute>
-                            <div className="pd-text-bottom-cross ff">
+                            <div onClick={()=>{del(product)}} className="pd-text-bottom-cross ff">
                                 <img src={cross} alt="down"className="pd-text-bottom-icon"/>
                             </div>
                         </PrivateRoute>
