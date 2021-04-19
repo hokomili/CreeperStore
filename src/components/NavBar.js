@@ -36,7 +36,7 @@ export default function NavBar() {
             <div >
             {currentUser?
                 <Link to="/Profile" >
-                    <img src ={nmember} alt="nmember" className="navbar-icon" />
+                    <img src = {currentUser.photoURL?currentUser.photoURL:nmember} alt="nmember" className="navbar-icon" />
                 </Link>
                 :
                 <Link to="/Login"  >

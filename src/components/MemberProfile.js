@@ -8,7 +8,7 @@ import { useAuth } from "../store/AuthContext";
 
 export default function MemberProfile(){
     const [ error ,setError] = useState("")
-    const { logout,Name,isadmin} =useAuth()
+    const { logout,Name,isadmin,currentUser} =useAuth()
     const history=useHistory()
     async function signout(){
         setError('')
