@@ -1,5 +1,6 @@
 
 import Logout from "../images/log-out.png"
+import Upload from "../images/cloud.png"
 import { useState }from "react"
 import { useHistory } from "react-router-dom"
 import { useAuth } from "../store/AuthContext";
@@ -30,6 +31,7 @@ export default function MemberProfile(){
                     </div>
                     <div className="member-nav">
                         <img onClick={signout} src={ Logout} alt="" className="logout-img"></img>
+                        <img onClick={Upload} src={ Upload} alt="" className="logout-img"></img>
                     </div>
                 </div>
            </div>

@@ -1046,6 +1046,7 @@ margin-right: auto;
   height: 50px;
   width: 50px;
   margin-right: 30px;
+  cursor: pointer;
 }
 .signup-title{
   font-family: 'Berlin Sans FB Demi',sans-serif;
