@@ -1,13 +1,13 @@
 [
    {
-      "title": "NORDIC NEST Shopping Cart",
+      "title": "Home",
       "name": "allProducts",
       "url": "/"
    },
    {
       "title": "Admin",
       "name": "allProducts",
-      "url": "/admin/feed-products/"
+      "url": "/admin/feed-products"
    },
    {
       "title": "Maps",
@@ -26,7 +26,7 @@
    },
    {
       "title": "Maps",
-      "name": "Trending",
+      "name": "Downloads",
       "url": "/Maps/Downloads"
    },
    {
@@ -35,34 +35,54 @@
       "url": "/Maps/Latest"
    },
    {
-      "title": "Cookware",
-      "name": "Cookware",
-      "url": "/cookware"
+      "title": "Textures",
+      "name": "allProducts",
+      "url": "/Textures"
    },
    {
-      "title": "Furniture",
-      "name": "Furniture",
-      "url": "/furniture"
+      "title": "Textures",
+      "name": "Trending",
+      "url": "/Textures/Trending"
    },
    {
-      "title": "Home Acessories",
-      "name": "Home Accessories",
-      "url": "/home-accessories"
+      "title": "Textures",
+      "name": "Views",
+      "url": "/Textures/Views"
    },
    {
-      "title": "Lighting",
-      "name": "Lighting",
-      "url": "/lighting"
+      "title": "Textures",
+      "name": "Downloads",
+      "url": "/Textures/Downloads"
    },
    {
-      "title": "Tableware",
-      "name": "Tableware",
-      "url": "/tableware"
+      "title": "Textures",
+      "name": "Latest",
+      "url": "/Textures/Latest"
    },
    {
-      "title": "Textile",
-      "name": "Textile",
-      "url": "/textile"
+      "title": "Mods",
+      "name": "allProducts",
+      "url": "/Mods"
+   },
+   {
+      "title": "Mods",
+      "name": "Trending",
+      "url": "/Mods/Trending"
+   },
+   {
+      "title": "Mods",
+      "name": "Views",
+      "url": "/Mods/Views"
+   },
+   {
+      "title": "Mods",
+      "name": "Downloads",
+      "url": "/Mods/Downloads"
+   },
+   {
+      "title": "Mods",
+      "name": "Latest",
+      "url": "/Mods/Latest"
    },
    {
       "title": "Feed JSON Page",

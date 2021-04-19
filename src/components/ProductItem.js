@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useState,useContext } from "react";
 import { Link } from 'react-router-dom';
 import { StoreContext } from "../store"
 import { setProductDetail } from "../actions";
@@ -6,10 +6,22 @@ import down from '../images/small-download-ico.png';
 import favor from '../images/small-favor-ico.png';
 import like from '../images/small-like-ico.png';
 import view from '../images/small-view-ico.png';
+import cross from '../images/small-cross-ico.png'
+import PrivateRoute from "./PrivateRoute";
+import {useAuth} from "../store/AuthContext"
 
-
+    
 export default function ProductItem({ product }) {
+    const {currentUser,likestate}=useAuth()
+    const url=window.location.pathname;
+    const {liked,setlike}=useState(likestate(product.id));
     const { dispatch } = useContext(StoreContext);
+    function dolike(){
+        if(!liked){
+            setlike(true)
+    
+        }
+    }
     return (
         <div className="pd-block">
             <Link to={`/products/${product.category}/${product.id}`} 
@@ -39,6 +51,20 @@ export default function ProductItem({ product }) {
                         <img src={down} alt="down"className="pd-text-bottom-icon"/>
                         <div className="pd-text-bottom-num">{product.download}</div>
                     </div>
+                    {url==="/admin/feed-products"&&
+                        <PrivateRoute>
+                            <div className="pd-text-bottom-cross ff">
+                                <img src={cross} alt="down"className="pd-text-bottom-icon"/>
+                            </div>
+                        </PrivateRoute>
+                    }
+                    {url!=="/admin/feed-products"&&currentUser&&
+                        <PrivateRoute>
+                            <div /*onClick={dolike}*/ className="pd-text-bottom-favor ff">
+                                <img src={favor} alt="favor"className="pd-text-bottom-icon"/>
+                            </div>
+                        </PrivateRoute>
+                    }
                 </div>
             </div>
         </div>
