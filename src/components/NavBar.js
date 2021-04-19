@@ -14,9 +14,7 @@ export default function NavBar() {
     const {currentUser}=useAuth()
     const { state: { cartItems } } = useContext(StoreContext);
 
-    const count = (cartItems.length > 0) ?
-        cartItems.reduce((sum, item) => sum + item.qty, 0)
-        : 0;
+    const count = (cartItems.length)
     return (
         <div className="nav-bar ">
             

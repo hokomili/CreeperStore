@@ -4,13 +4,13 @@ import { StoreContext } from "../store"
 import { addCartItem } from "../actions";
 
 export default function AddToCart() {
-  const { state: { cartItems, productDetail: { product, qty } }, dispatch } = useContext(StoreContext);
+  const { state: { cartItems, productDetail: { product,ver,edi ,qty } }, dispatch } = useContext(StoreContext);
 
   const openNotification = () => {
     notification.open({
       message: 'Notification',
       description:
-        `${qty} ${qty > 1 ? "pieces" : "piece"} of ${product.title} ${qty > 1 ? "have" : "has"} been added to your cart.`,
+        `${qty} ${qty > 1 ? "pieces" : "piece"} of ${ver}${product.title} ${qty > 1 ? "have" : "has"} been added to your bag.`,
       onClick: () => {
         console.log('Notification Clicked!');
       },
@@ -20,7 +20,7 @@ export default function AddToCart() {
 
   const addToCart = () => {
     openNotification();
-    addCartItem(dispatch, product, qty);
+    addCartItem(dispatch, product,ver,edi);
     //firebase.add
   };
 
