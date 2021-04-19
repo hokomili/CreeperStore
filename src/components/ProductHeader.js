@@ -1,5 +1,13 @@
+
+import { useContext } from "react";
+import { StoreContext } from "../store"
 export default function ProductHeader({title}) {
-   const url = window.location.pathname;
+   const ur = window.location.pathname;
+   var  url =ur
+   const { state: { productDetail: { product } } } = useContext(StoreContext);
+   if(product){
+      url='/'+product.category2
+   }
     return (
        <div className="header">
             <div className={url.slice(0,4)==='/Map'?

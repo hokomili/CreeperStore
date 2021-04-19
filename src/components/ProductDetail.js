@@ -26,7 +26,7 @@ function ProductDetail() {
                </div>
             ) : (
                <div className="pddel-content-big">
-                  <Link to='/Maps'className="back-block">
+                  <Link to={'/'+product.category2}className="back-block">
                      <div className="back-bottom"></div>
                      <div className="back-text">BACK</div>                        
                   </Link>
