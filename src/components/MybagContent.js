@@ -6,6 +6,7 @@ import { StoreContext } from "../store"
 import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 import Mybagbom from "../images/mybagbom.png"
 import Mybagimg from "../images/shopbag.png"
+import Delete from "../images/delete.png"
 const { Option } = Select;
 
 export default function MybagContent() {
@@ -30,7 +31,8 @@ export default function MybagContent() {
             <Row span={18} className="mybag-content-item-iner">
                <Col gutter={[32, 32]}>
                   {cartItems.length === 0 ? (
-                     <div>Cart is empty</div>
+                     <div className="bagempty-text ">BAG is Empty</div>
+                     
                   ) : (
                      cartItems.map(item => (
                         <Row span={7}>
@@ -61,16 +63,16 @@ export default function MybagContent() {
                                  </div>
                               </div>
                               <div className="cart-item-end">
-                                 <div className="cart-price">
+                                 {/* <div className="cart-price">
                                     ${item.price * item.qty}
-                                 </div>
+                                 </div> */}
                                  <div className="cart-item-delete" 
                                     onClick={() => {
                                        removeCartItem(dispatch, item.id);
                                        //firebase.remove
                                     }}
                                  >
-                                    x
+                                    <img src={ Delete}  className="delete"/>
                                  </div>
                               </div>
 
@@ -80,7 +82,7 @@ export default function MybagContent() {
                   )}
                </Col>
             </Row>
-            <div className="pddel-text-bottom" style={{cursor:"pointer"}} onClick={download}>
+            <div className="pddel-text-bottom " style={{cursor:"pointer"}} onClick={download}>
                      <h1>Download All </h1>
             </div>
             </div>
