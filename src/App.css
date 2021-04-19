@@ -99,6 +99,26 @@ html{
   filter: blur(2.5px);
   transform: scale(1.02)
 }
+.ph-bg{
+  position: relative;
+  height: 350px;
+  background: url(./images/Textures-bg.png);
+  background-repeat:no-repeat;
+  background-size: cover;
+  padding: 0;
+  filter: blur(2.5px);
+  transform: scale(1.02)
+}
+.ph-bg{
+  position: relative;
+  height: 350px;
+  background: url(./images/Mods-bg.png);
+  background-repeat:no-repeat;
+  background-size: cover;
+  padding: 0;
+  filter: blur(2.5px);
+  transform: scale(1.02)
+}
 .ph-box{
   position: absolute;
   width: 100vw;

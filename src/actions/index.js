@@ -15,15 +15,15 @@ import {
 
 import { getProducts, getProductById, feedProducts ,feedMaps,feedMedias,feedMods,feedTextures } from "../api";
 
-export const addCartItem = (dispatch, product, qty) => {
+export const addCartItem = (dispatch, product, ver,edi) => {
   const item = {
     id: product.id,
     category: product.category,
-    name: product.name,
+    title: product.title,
     image: product.image,
-    price: product.price,
-    countInStock: product.countInStock,
-    qty,
+    category2: product.category2,
+    version: ver,
+    edition: edi,
   };
   dispatch({
     type: ADD_CART_ITEM,
@@ -89,25 +89,18 @@ export const feedJSON5ToFirebase = async (dispatch) => {
   }
 }
 
-export const setProductDetail = async (dispatch, productId, qty) => {
+export const setProductDetail = async (dispatch, productId,ver,edi) => {
   dispatch({ type: BEGIN_PRODUCTS_REQUEST });
   try {
     const product = await getProductById(productId);
-    if (qty === 0)
       dispatch({
         type: SET_PRODUCT_DETAIL,
         payload: {
           product,
+          ver,
+          edi,
         }
       })
-    else
-      dispatch({
-        type: SET_PRODUCT_DETAIL,
-        payload: {
-          product,
-          qty,
-        }
-      })    
     dispatch({ type: SUCCESS_PRODUCTS_REQUEST });
   } catch (error) {
     console.log(error);
