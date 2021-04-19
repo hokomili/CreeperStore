@@ -21,27 +21,27 @@ export default function MybagContent() {
       <div>
          <div className="mybag-title">My Bag</div>
          <div className="mybag-content mybag-flex">
-            <Col span={6}>
+            {/* <Col span={6}> */}
             <img src={Mybagimg} alt="" className="mybag-img"></img>
-            </Col>
+            {/* </Col> */}
 
             {/*cartitem*/}
-
-            <Col span={18}>
-               <Row gutter={[32, 32]}>
+            <div className="mybag-content-item">
+            <Row span={18} className="mybag-content-item-iner">
+               <Col gutter={[32, 32]}>
                   {cartItems.length === 0 ? (
                      <div>Cart is empty</div>
                   ) : (
                      cartItems.map(item => (
-                        <Col>
-                           <li key={item.id} className="cart-item">
-                              <Link to={`/products/${item.category}/${item.id}`}>
+                        <Row span={7}>
+                           <div key={item.id} className="cart-item">
+                              <div><Link to={`/products/${item.category}/${item.id}`}>
                                  <div className="cart-image" onClick={()=>{
                                     setProductDetail(dispatch, item.id, item.qty);
                                  }}>
                                     <img src={item.image} alt={item.name}  className="item-image"/>
                                  </div>
-                              </Link>
+                              </Link></div>
                               <div className="cart-item-content">
                                  <div className="cart-name cart-mr">{item.name}</div>
                                  <div className="product-qty">
@@ -74,18 +74,16 @@ export default function MybagContent() {
                                  </div>
                               </div>
 
-                           </li>
-                        </Col>
+                           </div>
+                        </Row>
                      ))
                   )}
-               </Row>
-               <Row>
-                  <div className="pddel-text-bottom" style={{cursor:"pointer"}} onClick={download}>
+               </Col>
+            </Row>
+            <div className="pddel-text-bottom" style={{cursor:"pointer"}} onClick={download}>
                      <h1>Download All </h1>
-                  </div>
-               </Row>
-            </Col>
-
+            </div>
+            </div>
             {/*cartitem*/}
             
          </div>

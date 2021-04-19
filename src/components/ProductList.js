@@ -22,7 +22,8 @@ export default function ProductList() {
             <Spin indicator={antIcon} className="spinner" />
           </div>
         ) : (
-          <Row gutter={[0, 32]}>
+          <div className="productlist-div">
+          <Row gutter={[8, 16]}>
             {products.map(product => (
               <Col
                 key={product.id}
@@ -33,6 +34,7 @@ export default function ProductList() {
               </Col>
             ))}
           </Row>
+          </div>
         )
       }
     </>
