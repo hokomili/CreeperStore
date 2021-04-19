@@ -38,14 +38,27 @@ export const getProductById = async (productId) => {
 export const getProducts = async (url) => {
   const collection = jsonInfo.find(element => element.url === url);
   const collectionName = collection.name || "allProducts";
+  const collectiontitle = collection.title || "Admin";
   let jsonProducts = [];
   // QUERY PRODUCTS
   let querySnapshot;
-  if (collectionName === "allProducts")
+  let doubleQuery;
+  if(url==="/admin/feed-products"){
     querySnapshot = await allProductsCollectionRef.get();
+    querySnapshot.forEach((doc)=>{
+      jsonProducts.push(doc.data());
+    })
+    return jsonProducts;
+  }
+  if (collectionName === "allProducts")
+    querySnapshot = allProductsCollectionRef;
   else
-    querySnapshot = await allProductsCollectionRef.where("category", "==", collectionName).get();
-  querySnapshot.forEach((doc) => {
+    querySnapshot = allProductsCollectionRef.where("category", "==", collectionName);
+  if(collectiontitle === "Admin")
+    doubleQuery =await querySnapshot.get();
+  else
+    doubleQuery =await querySnapshot.where("category2","==",collectiontitle).get();
+  doubleQuery.forEach((doc) => {
     jsonProducts.push(doc.data());
   });
   return jsonProducts;

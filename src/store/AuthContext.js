@@ -1,7 +1,11 @@
 import React,{ useContext,useEffect,useState } from "react"
 import {auth,GoogleProvider,handleUserProfile} from "../api"
+import firebase from "firebase/app";
+import "firebase/firestore";
 const AuthContext=React.createContext()
 
+const UserCollectionRef = firebase.firestore().collection("users");
+const userDocRef = UserCollectionRef.doc("json");
 export function useAuth(){
     return useContext(AuthContext)
 }
@@ -10,6 +14,7 @@ export function AuthProvider({children}){
     const [currentUser,setCurrentUser]=useState()
     const [loading,setLoading]=useState(true)
     const [Name,setName]=useState("")
+    const [userRef,setRef]=useState()
     GoogleProvider.setCustomParameters({prompt:'select_account'});
     function googleauth(){
         return auth.signInWithPopup(GoogleProvider);
@@ -26,7 +31,22 @@ export function AuthProvider({children}){
     function forget(email){
         return auth.sendPasswordResetEmail(email)
     }
-
+    async function likestate(productid){
+        /*if(currentUser){
+            setRef(userDocRef.collection(currentUser.uid).doc("like"))
+        }
+        if(userRef==null){
+            return false
+        }
+        let alllikedref=userRef.where("id","==",productid)
+        let snopshot = await alllikedref.get()
+        if(snopshot){
+            return true
+        }
+        else{
+            return false
+        }*/
+    }
     useEffect(()=>{
         const unsubscribe = auth.onAuthStateChanged(async user =>{
             setCurrentUser(user)
@@ -36,6 +56,7 @@ export function AuthProvider({children}){
                 var userdata=values[1]
                 userRef.onSnapshot(snapshot=>{
                     userdata.displayName==null?setName(userdata.email):setName(userdata.displayName)
+
                 })
             }
             setLoading(false)
@@ -46,6 +67,7 @@ export function AuthProvider({children}){
     const value={
         currentUser,
         Name,
+        likestate,
         login,
         signup,
         googleauth,
