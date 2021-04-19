@@ -7,7 +7,7 @@
    {
       "title": "Admin",
       "name": "allProducts",
-      "url": "/admin/feed-products"
+      "url": "/Admin"
    },
    {
       "title": "Maps",
@@ -87,6 +87,6 @@
    {
       "title": "Feed JSON Page",
       "name": "FeedJSONPage",
-      "url": "/admin/feed-products"
+      "url": "/Admin"
    }
 ]

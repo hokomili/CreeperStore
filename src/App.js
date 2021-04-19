@@ -21,6 +21,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <PrivateRoute exact path="/Profile" component={Profile} />
+          <PrivateRoute exact path="/Admin" component={Feed} />
           <Route exact path="/Maps" component={Category} />
           <Route exact path="/Maps/:category" component={Category} />
           <Route exact path="/Mods" component={Category} />
@@ -32,7 +33,6 @@ function App() {
           <Route exact path="/Shopbag" component={Shopbag} />
           <Route exact path="/Forget-Password" component={FP} />
           <Route exact path="/:pageName" component={Home} />
-          <PrivateRoute exact path="/admin/feed-products" component={Feed} />
           <Route exact path="/products/:category/:productId" component={Product} />
         </Switch>
       </BrowserRouter>

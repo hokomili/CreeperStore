@@ -31,7 +31,7 @@ export default function MemberProfile(){
                     </div>
                     <div className="member-nav">
                         <img onClick={signout} src={ Logout} alt="" className="logout-img"></img>
-                        {isadmin(Name) &&<img onClick={() =>{history.push("/admin/feed-products")}} src={ Upload} alt="" className="logout-img"></img>}
+                        {isadmin(Name) &&<img onClick={() =>{history.push("/Admin")}} src={ Upload} alt="" className="logout-img"></img>}
                     </div>
                 </div>
            </div>

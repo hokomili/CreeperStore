@@ -51,16 +51,16 @@ export default function ProductItem({ product }) {
                         <img src={down} alt="down"className="pd-text-bottom-icon"/>
                         <div className="pd-text-bottom-num">{product.downloads}</div>
                     </div>
-                    {url==="/admin/feed-products"&&
+                    {url==="/Admin"&&
                         <PrivateRoute>
                             <div className="pd-text-bottom-cross ff">
                                 <img src={cross} alt="down"className="pd-text-bottom-icon"/>
                             </div>
                         </PrivateRoute>
                     }
-                    {url!=="/admin/feed-products"&&currentUser&&
+                    {url!=="/Admin"&&currentUser&&
                         <PrivateRoute>
-                            <div /*onClick={dolike}*/ className="pd-text-bottom-favor ff">
+                            <div onClick={()=>dolike} className="pd-text-bottom-favor ff">
                                 <img src={favor} alt="favor"className="pd-text-bottom-icon"/>
                             </div>
                         </PrivateRoute>

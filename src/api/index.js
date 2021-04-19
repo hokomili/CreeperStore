@@ -43,7 +43,7 @@ export const getProducts = async (url) => {
   // QUERY PRODUCTS
   let querySnapshot;
   let doubleQuery;
-  if(url==="/admin/feed-products"){
+  if(url==="/Admin"){
     querySnapshot = await allProductsCollectionRef.get();
     querySnapshot.forEach((doc)=>{
       jsonProducts.push(doc.data());

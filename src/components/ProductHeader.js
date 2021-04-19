@@ -5,7 +5,7 @@ export default function ProductHeader({title}) {
    const ur = window.location.pathname;
    var  url =ur
    const { state: { productDetail: { product } } } = useContext(StoreContext);
-   if(product){
+   if(ur.slice(0,3)==="/pr"){
       url='/'+product.category2
    }
     return (
