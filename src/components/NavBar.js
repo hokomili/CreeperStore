@@ -18,7 +18,7 @@ export default function NavBar() {
         cartItems.reduce((sum, item) => sum + item.qty, 0)
         : 0;
     return (
-        <div className="nav-bar hideUp">
+        <div className="nav-bar ">
             
         <div className="navbar-l">
             <Link to='/'>

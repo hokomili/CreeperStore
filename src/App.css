@@ -154,6 +154,7 @@ html{
   width: 179px;
   height: 65px;
 }
+
 /* .navbar-search{
   width: 403px;
 } */
@@ -210,6 +211,10 @@ html{
   z-index: 3;
 
 }
+.rwd-pnav{
+display: none;
+  
+}
 .pnav-search{
   display: flex;
   flex-direction: row;
@@ -217,6 +222,9 @@ html{
   margin-left: 165px;
   
 }
+/* ------------- */
+
+/* --------------- */
 .pnav-search-block{
   position: relative;
   display: flex;
@@ -409,6 +417,7 @@ display: none;
 .pd-block-outside{
   display: flex;
   justify-content: center;
+  margin-top: 50px;
 }
 .pd-block{
   /* width: 335px; */
@@ -1037,6 +1046,7 @@ margin-right: auto;
   height: 50px;
   width: 50px;
   margin-right: 30px;
+  cursor: pointer;
 }
 .signup-title{
   font-family: 'Berlin Sans FB Demi',sans-serif;
@@ -1326,4 +1336,56 @@ height: 33px;
   }
 
   /* ------------------product------------------- */
+
+  .ph-bg{
+    width: 100%;
+  }
+
+  /* -----------pnav */
+  .pnav-bar{
+    height: 50px;
+  }
+  .pnav-search{
+    display: none;
+  }
+  .rwd-pnav{
+    display: block;
+    width: 100vw;
+    height: 50px;
+    
+  }
+  .ant-collapse-header{
+    height: 49px;
+  }
+  .rwd-pnav-menu{
+    font-family: "Berlin Sans FB Demi";
+    font-size: 24px;
+
+  }
+  .pnav-search-text{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .productlist-div{
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+  }
+  .pd-block-outside{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .pd-footer-between{
+    width: 480px;
+    height: 53px;
+  }
+  .pd-footer-social-area{
+    width: 480px;
+    height: 151px;
+  }
+  .footer-foot-area{
+    height: 80px;
+  }
+
 } 

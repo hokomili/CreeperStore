@@ -23,17 +23,22 @@ export default function ProductList() {
           </div>
         ) : (
           <div className="productlist-div">
-          <Row gutter={[8, 16]}>
-            {products.map(product => (
-              <Col
-                key={product.id}
-                xl={{ span: 8 }}
-                className="pd-block-outside"
-              >
-                <ProductItem product={product} />
-              </Col>
-            ))}
-          </Row>
+            <div>
+            <Row gutter={16,{md:16,xl:8}} justify="center">
+              {products.map(product => (
+                <Col
+                  key={product.id}
+                  sm={{span:24}}
+                  xl={{ span: 8 }}
+                  
+                  
+                  className="pd-block-outside"
+                >
+                  <ProductItem product={product} />
+                </Col>
+              ))}
+            </Row>
+          </div>
           </div>
         )
       }
