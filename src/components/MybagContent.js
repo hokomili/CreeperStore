@@ -62,6 +62,7 @@ export default function MybagContent() {
                                           </Option>
                                        ))}
                                     </Select>:0}
+                                    Edition:{"   "}
                                     {item.edition?
                                     <Select
                                        defaultValue={item.edition[edi]}
