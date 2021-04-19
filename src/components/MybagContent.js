@@ -11,7 +11,7 @@ import Item from "antd/lib/list/Item";
 const { Option } = Select;
 
 export default function MybagContent() {
-   const { state: { cartItems,ver,edi }, dispatch } = useContext(StoreContext);
+   const { state: { cartItems }, dispatch } = useContext(StoreContext);
    async function download(){
       console.log("notdone")
    }
@@ -51,10 +51,10 @@ export default function MybagContent() {
                                     Version: {"   "}
                                     {item.version?
                                     <Select
-                                       defaultValue={item.version[ver]}
-                                       value={ver}
+                                       defaultValue={item.version[item.ver]}
+                                       value={item.ver}
                                        className="select-style"
-                                       onChange={(vers) => addCartItem(dispatch, item, vers,edi)}
+                                       onChange={(vers) => addCartItem(dispatch, item, vers,item.edi)}
                                     >
                                        {[...Array(item.version.length).keys()].map((x) => (
                                           <Option key={x} value={x}>
@@ -65,10 +65,10 @@ export default function MybagContent() {
                                     Edition:{"   "}
                                     {item.edition?
                                     <Select
-                                       defaultValue={item.edition[edi]}
-                                       value={edi}
+                                       defaultValue={item.edition[item.edi]}
+                                       value={item.edi}
                                        className="select-style"
-                                       onChange={(edit) => addCartItem(dispatch, item ,ver, edit)}
+                                       onChange={(edit) => addCartItem(dispatch, item ,item.ver, edit)}
                                     >
                                        {[...Array(item.edition.length).keys()].map((x) => (
                                           <Option key={x} value={x}>
