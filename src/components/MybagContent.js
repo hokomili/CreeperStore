@@ -7,6 +7,7 @@ import { addCartItem, removeCartItem, setProductDetail } from "../actions";
 import Mybagbom from "../images/mybagbom.png"
 import Mybagimg from "../images/shopbag.png"
 import Delete from "../images/delete.png"
+import Item from "antd/lib/list/Item";
 const { Option } = Select;
 
 export default function MybagContent() {
@@ -39,7 +40,7 @@ export default function MybagContent() {
                            <div key={item.id} className="cart-item">
                               <div><Link to={`/products/${item.category}/${item.id}`}>
                                  <div className="cart-image" onClick={()=>{
-                                    setProductDetail(dispatch, item.id, item.qty);
+                                    setProductDetail(dispatch, item.id, item.version);
                                  }}>
                                     <img src={item.image} alt={item.name}  className="item-image"/>
                                  </div>
@@ -47,16 +48,16 @@ export default function MybagContent() {
                               <div className="cart-item-content">
                                  <div className="cart-name cart-mr">{item.name}</div>
                                  <div className="product-qty">
-                                    Qty: {"   "}
+                                    Version: {"   "}
                                     <Select
-                                       defaultValue={item.qty}
-                                       value={item.qty}
+                                       defaultValue={item.version}
+                                       value={item.version}
                                        className="select-style"
-                                       onChange={(qty) => addCartItem(dispatch, item, qty)}
+                                       onChange={(version) => addCartItem(dispatch, item, version)}
                                     >
                                        {[...Array(item.countInStock).keys()].map((x) => (
-                                          <Option key={x + 1} value={x + 1}>
-                                             {x + 1}
+                                          <Option key={x} value={x}>
+                                             {Item.version?Item.version[x]:0}
                                           </Option>
                                        ))}
                                     </Select>
@@ -72,7 +73,7 @@ export default function MybagContent() {
                                        //firebase.remove
                                     }}
                                  >
-                                    <img src={ Delete}  className="delete"/>
+                                    <img src={ Delete} alt="" className="delete"/>
                                  </div>
                               </div>
 

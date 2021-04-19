@@ -29,19 +29,19 @@ export default function ProductItem({ product }) {
                 setProductDetail(dispatch, product.id, 1);
                 }}
             >
-                <img src={product.image} alt={product.name} className="pd-img"/>
+                <img src={product.image} alt={product.image_info} className="pd-img"/>
             </Link>
             <div className="pd-text-block">
                 <div className="pd-text-title">{product.title}</div>
-                <div className="pd-text-maker">By {product.maker}</div>
+                <div className="pd-text-maker">By {product.author}</div>
                 <div className="pd-text-bottom-area">
                     <div className="pd-text-bottom-view ff">
                         <img src={view} alt="view"className="pd-text-bottom-icon"/>
-                        <div className="pd-text-bottom-num">{product.view}</div>
+                        <div className="pd-text-bottom-num">{product.views}</div>
                     </div>
                     <div className="pd-text-bottom-like ff">
                         <img src={like} alt="like"className="pd-text-bottom-icon"/>
-                        <div className="pd-text-bottom-num">{product.good}</div>
+                        <div className="pd-text-bottom-num">{product.like}</div>
                     </div>
                     <div className="pd-text-bottom-favor ff">
                         <img src={favor} alt="favor"className="pd-text-bottom-icon"/>
@@ -49,7 +49,7 @@ export default function ProductItem({ product }) {
                     </div>
                     <div className="pd-text-bottom-down ff">
                         <img src={down} alt="down"className="pd-text-bottom-icon"/>
-                        <div className="pd-text-bottom-num">{product.download}</div>
+                        <div className="pd-text-bottom-num">{product.downloads}</div>
                     </div>
                     {url==="/admin/feed-products"&&
                         <PrivateRoute>

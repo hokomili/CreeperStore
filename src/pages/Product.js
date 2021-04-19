@@ -9,7 +9,7 @@ import NavBar from "../components/NavBar";
 
 function Product({ match }) {
    const { dispatch } = useContext(StoreContext);  
-   useEffect(() => setProductDetail(dispatch, match.params.productId, 0, match.params.category),[])
+   useEffect(() => setProductDetail(dispatch, match.params.productId, 0, 0),[])
    return (
       <Layout className="container">
          <NavBar />

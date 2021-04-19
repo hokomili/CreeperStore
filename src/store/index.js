@@ -28,6 +28,8 @@ let cartItems = localStorage.getItem("cartItems")
     },
     productDetail: {
       product: {},
+      ver: 0,
+      edi: 0,
       qty: 1,
     },
     navBar: {
