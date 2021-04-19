@@ -99,17 +99,17 @@ html{
   filter: blur(2.5px);
   transform: scale(1.02)
 }
-.ph-bg{
+.ph2-bg{
   position: relative;
   height: 350px;
-  background: url(./images/Textures-bg.png);
+  background: url(./images/Texurepacks-bg.png);
   background-repeat:no-repeat;
   background-size: cover;
   padding: 0;
   filter: blur(2.5px);
   transform: scale(1.02)
 }
-.ph-bg{
+.ph3-bg{
   position: relative;
   height: 350px;
   background: url(./images/Mods-bg.png);
