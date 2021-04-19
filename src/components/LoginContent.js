@@ -96,12 +96,17 @@ export default function LoginContent() {
                                     <div><Checkbox>Remember me</Checkbox></div>
                                 </Form.Item>
 
-                            
+                                    <div className="sign-rwd-flex">
                                 <Form.Item {...tailLayout} >
                                     <Button disabled={loading} type="primary" htmlType="submit" className="login-btn" >
                                         <div className="login-login-text">Login</div>
                                     </Button>
                                 </Form.Item>
+                                <Link to='/Signup' className="sign-rwd">
+                                <Button className="login-sign-bottom ">
+                                    < div className="login-google-text login-signup-text">Sign Up</div > 
+                                </Button>
+                                </Link ></div>
                             </Form>
                             </div>
                         </div>                        
@@ -117,7 +122,7 @@ export default function LoginContent() {
                                     </Link>
                             
                             <div className="or-text">OR</div>
-                            <Link to='/Signup' >
+                            <Link to='/Signup' className="big-rwd">
                                 <Button className="login-sign-bottom ">
                                     < div className="login-google-text login-signup-text">Sign Up</div > 
                                 </Button>

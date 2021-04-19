@@ -22,7 +22,7 @@ export default function MemberProfile(){
     return(
         <div className="member-content">
            <div className="member-content-iner">
-                <div>
+                <div className="member-content-iner-rwd">
                     <div className="member-img">
                         <div className="member-name-bg">
                             <div className="member-name">{Name}</div>

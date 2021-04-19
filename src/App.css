@@ -825,6 +825,9 @@ margin-right: auto;
   margin-left: 0;
 } */
 /* ----------Logincontent-------------------------- */
+.sign-rwd{
+display: none;
+}
 .login-block{
   position: relative;
 }
@@ -967,6 +970,7 @@ margin-right: auto;
   
   color: rgb(0, 60, 255);
 }
+
 .google-ico{
   width: 36px;
   height: 36px;
@@ -1062,6 +1066,7 @@ margin-right: auto;
   align-items: center;
 
 }
+/* ------------------ */
 .logout-img{
   height: 50px;
   width: 50px;
@@ -1136,9 +1141,9 @@ margin-right: auto;
   height: 90px;
   background: #303E47;
 }
-.cart-image{
+/* .cart-image{
 
-}
+} */
 .cart-item{
   display: flex;
   flex-direction: row;
@@ -1186,11 +1191,12 @@ margin-right: auto;
 .delete{
   height: 40px;
   width: 40px;
+  cursor: pointer;
 }
 
-.mybag-content-item-iner{
+/* .mybag-content-item-iner{
   
-}
+} */
 
 /* ------------------------------------------------------------------- */
 /* @media (max-width: 961px){
@@ -1357,8 +1363,13 @@ height: 33px;
 
   /* ------------------product------------------- */
 
+
   .ph-bg{
-    width: 100%;
+
+    height: 280px;
+    background: url(./images/Mapsimg-rwd.png);
+
+    
   }
 
   /* -----------pnav */
@@ -1407,5 +1418,458 @@ height: 33px;
   .footer-foot-area{
     height: 80px;
   }
+  /* -------productdetail---------------------- */
+  
+  
+  
+  .pddel-content-big{
+    margin-top: 10px;
+  }
+  .pddel-content{
+
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+  }  
+
+  .back-block{
+    display: none;
+  }
+
+  
+  
+  .pddel-main-image{
+    width: 429px;
+    height: 270px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+      border-radius: 10px;
+    }
+  
+  
+  
+  
+  
+  .pddel-small-img-block{
+    display: none;
+  }
+
+ 
+  
+  .pddel-text-block{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+  
+  .pddel-text-title{
+
+    font-size: 26px;
+  
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    align-self: center;
+    line-height: 26px;
+  
+  
+    margin-bottom: 20px;
+  
+  }
+  .pddel-text-intro{
+    font-size: 18px;
+    line-height: 20px;
+    display: flex;
+    align-self: center;
+  }
+  .pddel-text-maker-area{
+    margin-top: 20px;
+  }
+  .pddel-text-maker-img{
+    width: 40px;
+    height: 40px;
+  }
+  .pddel-text-maker-name{
+
+    font-size: 18px;
+  line-height: 21px;
+  }
+
+  .pddel-like-bottom{
+    width: 30px;
+    height: 29px;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+  }
+  .pddel-favor-bottom{
+    width: 36px;
+    height: 31px;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+  
+  }
+  
+
+  .pddel-text-bottom{
+
+    width: 230px;
+    height: 54px;   
+
+  }
+  .pddel-text-bottom h1{
+    font-size: 28px;
+  }
+/* ------------------ */
+.member-content{
+  background: rgba(78, 101, 115, 0.24);
+
+  
+}
+.member-content-iner{
+  width: 480px;
+  min-height: 100vh;
+  
+  background: #FFFFFF;
+}
+.mybag-content{
+  background: #F0F0F0;
+  min-height: 100vh;
+}
+.member-img{
+  background-image: url(./images/member-rwd.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 194px;
+  width: 480px;
+}
+.member-name-bg{
+  min-width: 50px;
+  height: 35px;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 100px;
+}
+.member-name{
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.member-nav{
+  width: 100%;
+
+}
+.logout-img{
+  height: 40px;
+  width: 40px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+/* .member-content-iner-rwd{
+  width: 480px;;
+} */
+
+
+
+
+
+
+
+/* ----------------------------------- */
+
+/* .login-btn-area{
+  margin-left: 0;
+} */
+/* ------------------------------------------------- */
+/* ------------------------------------------------ */
+/* ----------Logincontent-------------------------- */
+.login-block{
+  
+}
+.login-bg{
+  /* background-image: url(./images/login-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  opacity: 0.5;
+  transform: scale(1.02);
+  width: 100%;
+  height: 100vh;
+  z-index: -5; */
+  
+}
+.login-from{
+  width: 100%;
+  top:0;
+  left: 0;
+  transform: translate(0, 0);
+  min-height: 100vh;
+  /* position: absolute;
+  
+  top:53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex; */
+
+}
+.login-from-bg{
+  min-height: 100vh;
+  width: 100%;
+  /* height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  background: rgba(255, 255, 255, 0.76); */
+  border-radius: 10px;
+  padding-bottom: 50px;
+
+
+}
+
+.login-title{
+
+  font-size: 28px;
+  line-height: 30px;
+
+  margin-bottom: 0;
+  margin-top: 200px;
+}
+
+.login-from-flex{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+  width: 100%;
+}
+
+.login-from-l{
+  width: 100%;
+}
+
+.login-from-r{
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  
+
+}
+.btw-text{
+  display: none;
+
+}
+.btw-line{
+display: none;
+
+}
+
+.sign-rwd-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.or-text{
+
+  display: none;
+}
+
+.login-google-bottom{
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  border-radius: 99px;
+  border: 2px solid rgba(81, 83, 192, 0.411);
+  margin-bottom: 50px;
+
+  
+}
+/* .login-google-bottom:hover{
+
+  
+} */
+.login-google-text{
+display: none;
+}
+.google-ico{
+  width: 40px;
+  height: 40px;
+  margin: 0;
+}
+.login-sign-bottom{
+  width: 110px;
+  margin-bottom: 36px;
+
+  
+}
+.login-signup-text{
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  
+  color: rgb(0, 60, 255);
+}
+.big-rwd{
+  display: none;
+}
+
+
+
+.foget-btn{
+  margin-top: 80px;
+}
+.fgt-title{
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+}
+.fgt-botm{
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  margin-top: 30px;
+  margin-left: 50px;
+
+}
+.signup-text{
+  font-size: 20px;
+}
+
+
+
+.login-pwd{
+  margin-bottom: 5px;
+}
+.login-form-forgot{
+  /* margin-left: 10px; */
+  display: flex;
+  flex-direction: row-reverse;
+  color: rgb(0, 89, 255);
+}
+
+.login-btn{
+  
+  width: 100px;
+  /* height: 46px;
+  border-radius: 10px; */
+  
+  
+  
+}
+
+.sign-rwd{
+  display: block;
+}
+.signup-title{
+  font-size: 28px;
+  line-height: 30px;
+  margin-bottom: 30px;
+  margin-top: 200px;
+}
+.signup-bottom{
+  margin-bottom: 50px;
+}
+
+
+
+/* --------mybag------------------------ */
+
+.mybag-title{
+
+  font-size: 54px;
+  line-height: 58px;
+  margin-top: 150px;
+
+}
+
+.mybag-flex{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center;
+
+
+}
+.mybag-img{
+display: none;
+}
+.mybag-bomimg{
+  width: 100%;
+  height: 66px;
+
+}
+.mybag-bomimg-color{
+  height: 20px;
+  background: #303E47;
+}
+/* .cart-image{
+
+} */
+.cart-item{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  background: rgba(6, 30, 83, 0.623);
+  color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  font-size: 28px;
+  padding: 20px;
+  border-radius: 10px;
+}
+.cart-item-content{
+  margin-left: 30px;
+}
+/* .cart-name{
+  padding-left: 30px;
+} */
+.cart-item-end{
+  margin-left: 30px;
+}
+.item-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+.mybag-content-item{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-left: 0;
+  
+  
+}
+.product-qty{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bagempty-text{
+  font-size: 50px;
+}
+.delete{
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
 
 } 
