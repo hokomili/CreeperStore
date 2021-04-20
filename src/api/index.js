@@ -27,10 +27,8 @@ const mapsCollectionRef = productsDocRef.collection("maps");
 const textureCollectionRef = productsDocRef.collection("textures");
 const modsCollectionRef = productsDocRef.collection("mods");
 const mediaCollectionRef = productsDocRef.collection("medias");
-export const upload = async (product)=>{
-  console.log(product)
-  console.log(JSON.stringify(product))
-  allProductsCollectionRef.doc().set({product})
+export const upload = async (producte)=>{
+  allProductsCollectionRef.doc().set({producte})
 }
 export const getProductById = async (productId) => {
   // REFERENCE PRODUCTS COLLECTION
@@ -70,11 +68,9 @@ export const getProducts = async (url) => {
 export const feedProducts = () => {
   products.forEach((product) => {
     const docRef = allProductsCollectionRef.doc();
-    const id = docRef.id;
     // Store Data for Aggregation Queries
     docRef.set({
-      ...product,
-      id
+      ...product
     });
   })
 }

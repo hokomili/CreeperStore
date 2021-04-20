@@ -3,8 +3,13 @@ import { Card, Button } from "antd";
 import { feedJSONToFirebase,feedJSON2ToFirebase,feedJSON3ToFirebase,feedJSON4ToFirebase,feedJSON5ToFirebase } from "../actions"
 import { StoreContext } from "../store";
 import { useHistory } from "react-router";
+import { useAuth } from "../store/AuthContext";
+import Upload from "../images/cloud.png"
 
+
+    
 export default function Feeder() {
+    const { Name,isadmin} =useAuth()
    const { state: { feedProducts: { loading } }, dispatch } = useContext(StoreContext);
    const history=useHistory()
    function feedjs(){
@@ -23,6 +28,7 @@ export default function Feeder() {
                   <Button
                      className="cart-modal-btn"
                      type="primary"
+                     onClick={() => feedjs()}
                      loading
                   >
                      <span style={{ marginLeft: 12 }}>Feed</span>
@@ -32,7 +38,7 @@ export default function Feeder() {
                      <Button
                         className="cart-modal-btn"
                         type="primary"
-                        onClick={() => {feedjs()}}
+                        onClick={() => feedjs()}
                      >
                         <span style={{ marginLeft: 12 }}>Feed</span>
                      </Button>
@@ -64,6 +70,7 @@ export default function Feeder() {
                      >
                         <span style={{ marginLeft: 12 }}>media</span>
                      </Button>
+                     {isadmin(Name) &&<img onClick={() =>{history.push("/Admin/FormFeeder")}} src={ Upload} alt="" className="logout-img"></img>}
                   </div>
                )}
          </Card>
