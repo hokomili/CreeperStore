@@ -30,7 +30,7 @@ const mediaCollectionRef = productsDocRef.collection("medias");
 export const upload = async (product)=>{
   console.log(product)
   console.log(JSON.stringify(product))
-  allProductsCollectionRef.doc().set({...JSON.stringify(product)})
+  allProductsCollectionRef.doc().set({product})
 }
 export const getProductById = async (productId) => {
   // REFERENCE PRODUCTS COLLECTION

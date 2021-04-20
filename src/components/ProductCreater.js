@@ -31,7 +31,7 @@ export default function ProductCreater() {
                         initialValues={{ remember: true }}
                         onFinish={Submission}
                     >
-                        <div className="signup-title" style={{fontSize:"60px"}}>Submit product</div>
+                        <div className="signup-title" style={{fontSize:"70px"}}>Submit product</div>
                         {error && <Alert message={error} type="error" />}
                         <Form.Item
                             label="Title"
