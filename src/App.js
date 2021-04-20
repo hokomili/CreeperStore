@@ -10,6 +10,7 @@ import Shopbag from './pages/Shopbag'
 import FP from './pages/Forget-Password'
 import Feed from './pages/Feed'
 import Profile from './pages/Profile'
+import FormFeeder from './pages/FormFeeder'
 import { StoreProvider } from "./store";
 import { AuthProvider } from './store/AuthContext.js';
 
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <PrivateRoute exact path="/Profile" component={Profile} />
           <PrivateRoute exact path="/Admin" component={Feed} />
+          <PrivateRoute exact path="/Admin/FormFeeder" component={FormFeeder} />
           <Route exact path="/Maps" component={Category} />
           <Route exact path="/Maps/:category" component={Category} />
           <Route exact path="/Mods" component={Category} />

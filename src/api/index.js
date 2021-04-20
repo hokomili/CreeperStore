@@ -27,7 +27,11 @@ const mapsCollectionRef = productsDocRef.collection("maps");
 const textureCollectionRef = productsDocRef.collection("textures");
 const modsCollectionRef = productsDocRef.collection("mods");
 const mediaCollectionRef = productsDocRef.collection("medias");
-
+export const upload = async (product)=>{
+  console.log(product)
+  console.log(JSON.stringify(product))
+  allProductsCollectionRef.doc().set({...JSON.stringify(product)})
+}
 export const getProductById = async (productId) => {
   // REFERENCE PRODUCTS COLLECTION
   const doc = await allProductsCollectionRef.doc(productId).get();
