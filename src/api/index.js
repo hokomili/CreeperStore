@@ -65,13 +65,11 @@ export const getProducts = async (url) => {
   return jsonProducts;
 }
 
-export const feedProducts = () => {
-  products.forEach((product) => {
+export const feedProducts = async() => {
+  products.forEach(async (product) => {
     const docRef = allProductsCollectionRef.doc();
-    // Store Data for Aggregation Queries
-    docRef.set({
-      ...product
-    });
+    const id = docRef.id;
+    console.log(await docRef.set({...product,id}))
   })
 }
 export const feedMedias = () => {

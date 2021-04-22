@@ -12,8 +12,8 @@ export default function Feeder() {
     const { Name,isadmin} =useAuth()
    const { state: { feedProducts: { loading } }, dispatch } = useContext(StoreContext);
    const history=useHistory()
-   function feedjs(){
-      const feeder1=feedJSONToFirebase(dispatch)
+   async function feedjs(){
+      await feedJSONToFirebase(dispatch)
       history.go(0)
    }
    return (
