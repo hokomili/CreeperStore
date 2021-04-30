@@ -1,7 +1,7 @@
 
 import { useContext } from "react";
 import { StoreContext } from "../store"
-export default function ProductHeader({title}) {
+export default function ProductHeader() {
    const ur = window.location.pathname;
    var  url =ur
    const { state: { productDetail: { product } } } = useContext(StoreContext);
