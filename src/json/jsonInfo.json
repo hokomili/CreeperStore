@@ -17,47 +17,47 @@
    {
       "title": "Maps",
       "name": "Trending",
-      "url": "/Maps/Trending"
+      "url": "/product/Maps/Trending"
    },
    {
       "title": "Maps",
       "name": "Views",
-      "url": "/Maps/Views"
+      "url": "/product/Maps/Views"
    },
    {
       "title": "Maps",
       "name": "Downloads",
-      "url": "/Maps/Downloads"
+      "url": "/product/Maps/Downloads"
    },
    {
       "title": "Maps",
       "name": "Latest",
-      "url": "/Maps/Latest"
+      "url": "/product/Maps/Latest"
    },
    {
       "title": "Textures",
       "name": "allProducts",
-      "url": "/Textures"
+      "url": "/product/Textures"
    },
    {
       "title": "Textures",
       "name": "Trending",
-      "url": "/Textures/Trending"
+      "url": "/product/Textures/Trending"
    },
    {
       "title": "Textures",
       "name": "Views",
-      "url": "/Textures/Views"
+      "url": "/product/Textures/Views"
    },
    {
       "title": "Textures",
       "name": "Downloads",
-      "url": "/Textures/Downloads"
+      "url": "/product/Textures/Downloads"
    },
    {
       "title": "Textures",
       "name": "Latest",
-      "url": "/Textures/Latest"
+      "url": "/product/Textures/Latest"
    },
    {
       "title": "Mods",
@@ -67,22 +67,22 @@
    {
       "title": "Mods",
       "name": "Trending",
-      "url": "/Mods/Trending"
+      "url": "/product/Mods/Trending"
    },
    {
       "title": "Mods",
       "name": "Views",
-      "url": "/Mods/Views"
+      "url": "/product/Mods/Views"
    },
    {
       "title": "Mods",
       "name": "Downloads",
-      "url": "/Mods/Downloads"
+      "url": "/product/Mods/Downloads"
    },
    {
       "title": "Mods",
       "name": "Latest",
-      "url": "/Mods/Latest"
+      "url": "/product/Mods/Latest"
    },
    {
       "title": "Feed JSON Page",

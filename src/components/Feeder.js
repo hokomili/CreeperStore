@@ -70,7 +70,7 @@ export default function Feeder() {
                      >
                         <span style={{ marginLeft: 12 }}>media</span>
                      </Button>
-                     {isadmin(Name) &&<img onClick={() =>{history.push("/Admin/FormFeeder")}} src={ Upload} alt="" className="logout-img"></img>}
+                     {isadmin(Name) &&<img onClick={() =>{history.push("/Admin-FormFeeder")}} src={ Upload} alt="" className="logout-img"></img>}
                   </div>
                )}
          </Card>

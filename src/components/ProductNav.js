@@ -17,9 +17,14 @@ export default function ProductNav() {
     const history=useHistory()
     function clicking(to){
         setLoading(true)
-        history.push('../'+category+to)
+        if(to){
+            history.push('/product/'+category+to)
+        }
+        else{
+            history.push(category)
+        }
         setLoading(false)
-        history.go(0)
+        history.go('/')
     }
     return (
 
@@ -27,7 +32,7 @@ export default function ProductNav() {
         <div className="pnav-bar">
             
             <div className="pnav-search">
-                <div onClick={()=>clicking('')} style={{cursor:"Pointer"}} className="pnav-search-block">
+                <div onClick={()=>clicking(false)} style={{cursor:"Pointer"}} className="pnav-search-block">
                     <img src={All} alt="All" className="pnav-search-img"></img>
                     <div className="pnav-search-text">ALL</div>
                     <div className={"pnav--inactive "+((url.slice(-4)==="Maps"||url.slice(-8)==="Textures"||url.slice(-4)==="Mods")?"pnav-search-block--active":"")}></div>

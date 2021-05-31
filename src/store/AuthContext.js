@@ -3,7 +3,8 @@ import {auth,GoogleProvider,handleUserProfile} from "../api"
 import firebase from "firebase/app";
 import "firebase/firestore";
 const AuthContext=React.createContext()
-
+firebase.firestore().enablePersistence()
+.catch((err)=>{console.log(err.code)})
 const UserCollectionRef = firebase.firestore().collection("users");
 const adminCollectionRef= firebase.firestore().collection("admins")
 const userDocRef = UserCollectionRef.doc("json");

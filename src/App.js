@@ -20,22 +20,22 @@ function App() {
     <StoreProvider>
       <BrowserRouter>
         <Switch>
+          <Route path="/products/:category/:productId" component={Product} />
           <Route exact path="/" component={Home} />
           <PrivateRoute exact path="/Profile" component={Profile} />
-          <PrivateRoute exact path="/Admin" component={Feed} />
-          <PrivateRoute exact path="/Admin/FormFeeder" component={FormFeeder} />
-          <Route exact path="/Maps" component={Category} />
-          <Route exact path="/Maps/:category" component={Category} />
-          <Route exact path="/Mods" component={Category} />
-          <Route exact path="/Mods/:category" component={Category} />
-          <Route exact path="/Textures" component={Category} />
-          <Route exact path="/Textures/:category" component={Category} />
+          <PrivateRoute exact path="/Admin-FormFeeder" component={FormFeeder} />
+          <PrivateRoute path="/Admin" component={Feed} />
+          <Route path="/product/Maps/:category" component={Category} />
+          <Route path="/Maps" component={Category} />
+          <Route path="/Mods/:category" component={Category} />
+          <Route path="/Mods" component={Category} />
+          <Route path="/Textures/:category" component={Category} />
+          <Route path="/Textures" component={Category} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup}/>
           <Route exact path="/Shopbag" component={Shopbag} />
           <Route exact path="/Forget-Password" component={FP} />
-          <Route exact path="/:pageName" component={Home} />
-          <Route exact path="/products/:category/:productId" component={Product} />
+          <Route path="/:pageName" component={Home} />
         </Switch>
       </BrowserRouter>
     </StoreProvider>
